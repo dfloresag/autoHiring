@@ -1,39 +1,41 @@
 ---
-title: "Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description"
+title: "Cahier des charges"
 output: github_document
 params:
-  Last_Name : "Doe"
-  First_Name : "John"
-  AVS_Number : 000
-  Date_of_Birth : !r as.Date("2017-11-12")
-  Address_line_1 : "Rue Somewhere 12" 
-  Address_line_2 : NA
-  City : "Lausanne"
-  Canton : "VD"
-  Country : "CH"
-  Marital_status : "Single" 
-  Count_of_children : "0"
-  PhD : "Yes"
-  Date_of_PhD : !r as.Date("2017-11-12")
-  Highest_Degree : NA
-  Date_of_Diploma:  NA
-  Profession_Academic_Focus: "Statistics"
-  Nationality: "CH"
-  Swiss_Origin : "GE"
-  Work_permit  : NA
-  Type_of_work_permit : NA
-  Start_date_availability : !r as.Date("2017-11-12")
-  Role : "EXPERT"
-  Team : "SOME TEAM"
-  Hiring_Percentage : "100" 
-  Place_of_Work : "GE"
+  Last_Name         : NA
+  First_Name        : NA
+  AVS_Number        : NA
+  Date_of_Birth     : NA
+  Address_line_1    : NA
+  Address_line_2    : NA
+  City              : NA
+  Canton            : NA
+  Country           : NA
+  Marital_status    : NA
+  Count_of_children : NA
+  PhD               : NA
+  Date_of_PhD       : NA
+  Highest_Degree    : NA
+  Date_of_Diploma   : NA
+  Profession        : NA
+  Nationality       : NA
+  Swiss_Origin      : NA
+  Work_permit       : NA
+  Type_of_permit    : NA
+  Start_date        : NA
+  Role              : NA
+  Team              : NA
+  Hiring_Percentage : NA
+  Place_of_Work     : NA
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**Name,Vorname/Nom, prénom/Cognome, nome:**  `r params$Last_Name` ,  `r params$First_Name`
+## "Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description"
+
+**Name,Vorname/Nom, prénom/Cognome, nome:**  `r params$Last_Name`, `r params$First_Name`
 
 **Geb.-Jahr / Année de naiss./ Date of Birth:** `r params$Date_of_Birth`
 

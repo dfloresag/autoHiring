@@ -3,32 +3,31 @@ title: "Proposition d'Engagement"
 subtitle: 
 output: github_document
 params:
-  Last_Name : "Doe"
-  First_Name : "John"
-  AVS_Number : 0
-  Date_of_Birth : !r as.Date("2017-11-12")
-  Address_line_1 : "Rue Somewhere 12" 
-  Address_line_2 : NA
-  City : "Lausanne"
-  Canton : "VD"
-  Country : "CH"
-  Marital_status : "Single" 
+  Last_Name         : "Doe"
+  First_Name        : "John"
+  AVS_Number        : 000
+  Date_of_Birth     : !r as.Date("2017-11-12")
+  Address_line_1    : "Rue Somewhere 12" 
+  Address_line_2    : NA
+  City              : "Lausanne"
+  Canton            : "VD"
+  Country           : "CH"
+  Marital_status    : "Single" 
   Count_of_children : "0"
-  PhD : "Yes"
-  Date_of_PhD : !r as.Date("2017-11-12")
-  Highest_Degree : NA
-  Date_of_Diploma:  NA
-  Profession_Academic_Focus: "Statistics"
-  Nationality: "CH"
-  Swiss_Origin : "GE"
-  Work_permit  : NA
-  Type_of_work_permit : NA
-  Start_date_availability : !r as.Date("2017-11-12")
-  Role : "EXPERT"
-  Team : "SOME TEAM"
+  PhD               : "Yes"
+  Date_of_PhD       : !r as.Date("2017-11-12")
+  Highest_Degree    : NA
+  Date_of_Diploma   : NA
+  Profession        : "Statistics"
+  Nationality       : "CH"
+  Swiss_Origin      : "GE"
+  Work_permit       : NA
+  Type_of_permit    : NA
+  Start_date        : !r as.Date("2017-11-12")
+  Role              : "EXPERT"
+  Team              : "SOME TEAM"
   Hiring_Percentage : "100" 
-  Place_of_Work : "GE"
-  
+  Place_of_Work     : "GE"
 ---
 
 **Nom et prénom:** `r params$Last_Name` `r params$First_Name`

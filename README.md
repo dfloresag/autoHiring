@@ -1,22 +1,27 @@
 autoHiring
 ================
 
-This is a bricks and mortar skeleton
+This is a bricks and mortar skeleton of an idea on how to automatise the
+production of the documents needed in the hiring process.
+
+The most simple way to generate a form consists in generating a
+[*parametrized
+report*](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F#Passing_Parameters)
+by extracting the data from the excel file and passing it to the
+`rmarkdown::render()` function as the `params` argument.
+
+To do this, one can start by extracting the data from the properly
+formatted Excel sheet. Here, we are only interested in the fields and
+their.
 
 ``` r
-library(dplyr)
-library(tidyr)
-library(readxl)
-library(stringr)
-library(anytime)
-```
-
-``` r
-person <- readxl::read_excel(path = "data/form1.xlsx", skip = 3) %>% 
+person <- 
+  readxl::read_excel(path = "data/form1.xlsx", skip = 3) %>% 
   select(`FIELD`,`YOUR DETAILS`) %>% 
   pivot_wider(names_from = `FIELD`, values_from = `YOUR DETAILS`)
-person
 ```
+
+The second step consists in storing the extracted values in a `list`.
 
 ``` r
 params_list  <-  list(
@@ -52,6 +57,10 @@ params_list  <-  list(
   )
 ```
 
+Then, the third step, consists in rendering the CDC and PDE files with
+the previous list of parameters using `rmarkdown::render()` with `params
+= params_list`, as in:
+
 ``` r
 rmarkdown::render(
   input = "CDC/README.Rmd", 
@@ -63,3 +72,30 @@ rmarkdown::render(
   params = params_list
   )
 ```
+
+  - The YAML of the generating documents contain a `params` argument
+    with initial values set to `NA`.
+
+<!-- end list -->
+
+``` yaml
+---
+title: "Cahier des charges"
+output: github_document
+params:
+  Last_Name         : NA
+  First_Name        : NA
+  AVS_Number        : NA
+  ...
+---
+```
+
+  - The [body of the generating document](CDC/README.Rmd) contains
+    placeholders for the values contained in the `params` list,
+    e.g. `params$First_Name`, etc. Rendering them on their own produces
+    a document with `NA`’s instead of the data, but through the `params`
+    argument we can fill them in. Check [this example](CDC/README.md)
+    based on [this form](data/form1.xlsx)
+
+The next step consists in small function and testing all the scenarios
+with a variety of forms.

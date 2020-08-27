@@ -1,19 +1,19 @@
 Proposition d’Engagement
 ================
 
-**Nom et prénom:** FLORES AGREDA Daniel Antonio
+**Nom et prénom:** Doe John
 
-**N° AVS:** 756.6576.5019.29
+**N° AVS:** 0
 
-**Adresse complète:** Rue Voltaire 12 NA
+**Adresse complète:** Rue Somewhere 12 NA
 
-**Date de naissance:** 2016-12-01
+**Date de naissance:** 2017-11-12
 
 **Etat civil:** Single
 
 **Nombre d’enfants:**
 
-**Nationalité** (joindre la copie de la pièce d’identité) : Switzerland
+**Nationalité** (joindre la copie de la pièce d’identité) : CH
 
 **Profession:**
 
@@ -21,9 +21,9 @@ Proposition d’Engagement
 
 **Doctorat**: Yes
 
-**Date du Doctorat:** 2017-07-29
+**Date du Doctorat:** 2017-11-12
 
-**Taux d’occupation:** 1
+**Taux d’occupation:** 100
 
 **Lieu de travail:**
 

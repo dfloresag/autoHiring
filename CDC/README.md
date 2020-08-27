@@ -1,15 +1,15 @@
-Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job
-description
+Cahier des charges
 ================
 
-**Name,Vorname/Nom, prénom/Cognome, nome:** FLORES AGREDA , Daniel
-Antonio
+## “Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description”
 
-**Geb.-Jahr / Année de naiss./ Date of Birth:** 2016-12-01
+**Name,Vorname/Nom, prénom/Cognome, nome:** NA, NA
+
+**Geb.-Jahr / Année de naiss./ Date of Birth:** NA
 
 **Erlernter Beruf/Prof.apprise/Diploma:**
 
-**Entrée dans l’office / Date of entry:** 2020-08-17
+**Entrée dans l’office / Date of entry:**
 
 **Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt **
 
