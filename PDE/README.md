@@ -1,32 +1,31 @@
 Proposition d’Engagement
 ================
 
-Nom et prénom : FLORES AGREDA Daniel Antonio
+**Nom et prénom:** FLORES AGREDA Daniel Antonio
 
-N° AVS : 756.6576.5019.29
+**N° AVS:** 756.6576.5019.29
 
-Adresse complète : Rue Voltaire 12 NA
+**Adresse complète:** Rue Voltaire 12 NA
 
-Date de naissance : 2016-12-01
+**Date de naissance:** 2016-12-01
 
-Etat civil : Single
+**Etat civil:** Single
 
-Nombre d’enfants :
+**Nombre d’enfants:**
 
-Nationalité (joindre la copie de la pièce d’identité) : Switzerland
+**Nationalité** (joindre la copie de la pièce d’identité) : Switzerland
 
-Profession :
+**Profession:**
 
-Date du diplôme :
+**Date du diplôme:**
 
-Doctorat : oui non
+**Doctorat**: Yes
 
-Date du Doctorat :
+**Date du Doctorat:** 2017-07-29
 
-Taux d’occupation : 100 % autre (préciser) : %
+**Taux d’occupation:** 1
 
-Lieu de travail : Lausanne Fribourg Genève Neuchâtel Valais Villigen
-Autre :
+**Lieu de travail:**
 
-Étranger.e.s : Permis de travail (joindre une copie) : aucun B C L G
+**Étranger.e.s: Permis de travail** (joindre une copie) : aucun B C L G
 autre :

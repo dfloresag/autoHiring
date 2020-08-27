@@ -5,7 +5,7 @@ output: github_document
 params:
   Last_Name : "Doe"
   First_Name : "John"
-  AVS_Number : 000
+  AVS_Number : 0
   Date_of_Birth : !r as.Date("2017-11-12")
   Address_line_1 : "Rue Somewhere 12" 
   Address_line_2 : NA
@@ -14,7 +14,7 @@ params:
   Country : "CH"
   Marital_status : "Single" 
   Count_of_children : "0"
-  PhD : TRUE
+  PhD : "Yes"
   Date_of_PhD : !r as.Date("2017-11-12")
   Highest_Degree : NA
   Date_of_Diploma:  NA
@@ -31,31 +31,30 @@ params:
   
 ---
 
-Nom et prénom : `r params$Last_Name` `r params$First_Name`
+**Nom et prénom:** `r params$Last_Name` `r params$First_Name`
 
-N° AVS : `r params$AVS_Number`
+**N° AVS:**  `r params$AVS_Number`
 
-Adresse complète : `r params$Address_line_1` `r params$Address_line_2`
+**Adresse complète:** `r params$Address_line_1` `r params$Address_line_2`
 
-Date de naissance : `r params$Date_of_Birth`
+**Date de naissance:** `r params$Date_of_Birth`
 
-Etat civil : `r params$Marital_status`
+**Etat civil:** `r params$Marital_status`
 
-Nombre d'enfants : 
+**Nombre d'enfants:** 
 
-Nationalité (joindre la copie de la pièce d’identité) : `r params$Country`
+**Nationalité** (joindre la copie de la pièce d’identité) : `r params$Country`
 
-Profession : 
+**Profession:** 
 
-Date du diplôme :
+**Date du diplôme:**
 
-Doctorat :  oui non
+**Doctorat**:  `r params$PhD`
 
-Date du Doctorat :
+**Date du Doctorat:** `r as.Date(params$Date_of_PhD)`
 
-Taux d'occupation : 100 % autre (préciser) : %
+**Taux d'occupation:** `r params$Hiring_Percentage`
 
-Lieu de travail : Lausanne Fribourg Genève Neuchâtel Valais Villigen Autre :
+**Lieu de travail:** 
 
-Étranger.e.s : Permis de travail (joindre une copie) : aucun B C L G autre :
-
+**Étranger.e.s: Permis de travail** (joindre une copie) : aucun B C L G autre :

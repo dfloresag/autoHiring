@@ -2,58 +2,49 @@ Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job
 description
 ================
 
-##### Name,Vorname/Nom, prénom/Cognome, nome:
+**Name,Vorname/Nom, prénom/Cognome, nome:** FLORES AGREDA , Daniel
+Antonio
 
-FLORES AGREDA , Daniel Antonio
+**Geb.-Jahr / Année de naiss./ Date of Birth:** 2016-12-01
 
-#### Geb.-Jahr / Année de naiss./ Date of Birth
+**Erlernter Beruf/Prof.apprise/Diploma:**
 
-2016-12-01
+**Entrée dans l’office / Date of entry:** 2020-08-17
 
-#### Erlernter Beruf/Prof.apprise/Diploma
+**Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt **
 
-``` r
-if (params$PhD){
-  "PhD"
-} else{
-  "Other"
-}
-```
+**Bundesamt, office fédéral / ufficio federale**
 
-#### Entrée dans l’office / Date of entry
+**Bereich, Betrieb / Secteur,unité d’ organisation/ Faculty-laboratory**
 
-2020-08-17
+**Dienstliche Stellung, Klasse/ Fonction, classe/Funzione,
+classegegenwärtig/actuelles/attuali / Function**
 
-#### Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt /
+**Kl./cl./cl/class of Kl./cl./cl/class of salary**
 
-#### Bundesamt, office fédéral / ufficio federale
+**Vorschlag/Proposition/Proposta**
 
-#### Bereich, Betrieb / Secteur,unité d’ organisation/ Faculty-laboratory
+**Kl./cl./cl/class of salary**
 
-#### Dienstliche Stellung, Klasse/ Fonction, classe/Funzione, classegegenwärtig/actuelles/attuali / Function,
+**Termin/A partir du/A partire dal**
 
-#### Kl./cl./cl/class of Kl./cl./cl/class of salary
+**Dienstverhältnis/Rapports de service/Rapporto d’impiego
+gegenwärtig/actuels/attuale / Contract duration**
 
-#### Vorschlag/Proposition/Proposta
+**Vorschlag/Proposition/Proposta**
 
-#### Kl./cl./cl/class of salary
+**LetzteBeförderung/Dernière promotion/Ultima promozione**
 
-#### Termin/A partir du/A partire dal
+**Dienstverhältnis/Rapports de service/Rapporto d’impiego
+gegenwärtig/actuels/attuale / Contract duration**
 
-#### Dienstverhältnis/Rapports de service/Rapporto d’impiego gegenwärtig/actuels/attuale / Contract duration
+**Vorschlag/Proposition/Proposta**
 
-#### Vorschlag/Proposition/Proposta
+**LetzteBeförderung/Dernière promotion/Ultima promozione**
 
-#### LetzteBeförderung/Dernière promotion/Ultima promozione
+**Tätigkeiten in der Reihenfolge ihrer Bedeutung / Activités par ordre
+d’importance / Job description**
 
-#### Dienstverhältnis/Rapports de service/Rapporto d’impiego gegenwärtig/actuels/attuale / Contract duration
+**%**
 
-#### Vorschlag/Proposition/Proposta
-
-#### LetzteBeförderung/Dernière promotion/Ultima promozione
-
-#### Tätigkeiten in der Reihenfolge ihrer Bedeutung / Activités par ordre d’importance / Job description
-
-#### %
-
-#### Art der Erledigung/ Manière de traiter les affaires/Way of work
+**Art der Erledigung/ Manière de traiter les affaires/Way of work**

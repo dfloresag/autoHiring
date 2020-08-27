@@ -13,7 +13,7 @@ params:
   Country : "CH"
   Marital_status : "Single" 
   Count_of_children : "0"
-  PhD : TRUE
+  PhD : "Yes"
   Date_of_PhD : !r as.Date("2017-11-12")
   Highest_Degree : NA
   Date_of_Diploma:  NA
@@ -33,59 +33,44 @@ params:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-##### Name,Vorname/Nom, prénom/Cognome, nome:  
+**Name,Vorname/Nom, prénom/Cognome, nome:**  `r params$Last_Name` ,  `r params$First_Name`
 
-`r params$Last_Name` ,  `r params$First_Name`
+**Geb.-Jahr / Année de naiss./ Date of Birth:** `r params$Date_of_Birth`
 
-#### Geb.-Jahr / Année de naiss./ Date of Birth
+**Erlernter Beruf/Prof.apprise/Diploma:** 
 
-`r params$Date_of_Birth`
+**Entrée dans l'office / Date of entry:** `r params$Start_date_availability`
 
-#### Erlernter Beruf/Prof.apprise/Diploma
+**Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt **
 
-```{r}
-if (params$PhD){
-  "PhD"
-} else{
-  "Other"
-}
+**Bundesamt, office fédéral / ufficio federale**
 
-```
+**Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory**
 
-#### Entrée dans l'office / Date of entry
+**Dienstliche Stellung, Klasse/ Fonction, classe/Funzione, classegegenwärtig/actuelles/attuali / Function**
 
-`r params$Start_date_availability`
+**Kl./cl./cl/class of Kl./cl./cl/class of salary**
 
-#### Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt / 
+**Vorschlag/Proposition/Proposta**
 
-#### Bundesamt, office fédéral / ufficio federale
-
-#### Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory
-
-#### Dienstliche Stellung, Klasse/ Fonction, classe/Funzione, classegegenwärtig/actuelles/attuali / Function,
-
-#### Kl./cl./cl/class of Kl./cl./cl/class of salary 
-
-#### Vorschlag/Proposition/Proposta
-
-#### Kl./cl./cl/class of salary
+**Kl./cl./cl/class of salary**
  
-#### Termin/A partir du/A partire dal
+**Termin/A partir du/A partire dal**
 
-#### Dienstverhältnis/Rapports de service/Rapporto d'impiego gegenwärtig/actuels/attuale / Contract duration 
+**Dienstverhältnis/Rapports de service/Rapporto d'impiego gegenwärtig/actuels/attuale / Contract duration** 
 
-#### Vorschlag/Proposition/Proposta
+**Vorschlag/Proposition/Proposta**
 
-#### LetzteBeförderung/Dernière promotion/Ultima promozione
+**LetzteBeförderung/Dernière promotion/Ultima promozione**
 
-#### Dienstverhältnis/Rapports de service/Rapporto d'impiego gegenwärtig/actuels/attuale / Contract duration
+**Dienstverhältnis/Rapports de service/Rapporto d'impiego gegenwärtig/actuels/attuale / Contract duration**
  
-#### Vorschlag/Proposition/Proposta
+**Vorschlag/Proposition/Proposta**
  
-#### LetzteBeförderung/Dernière promotion/Ultima promozione
+**LetzteBeförderung/Dernière promotion/Ultima promozione**
 
-#### Tätigkeiten in der Reihenfolge ihrer Bedeutung / Activités par ordre d'importance / Job description
+**Tätigkeiten in der Reihenfolge ihrer Bedeutung / Activités par ordre d'importance / Job description**
 
-#### % 
+**%** 
 
-#### Art der Erledigung/ Manière de traiter les affaires/Way of work
+**Art der Erledigung/ Manière de traiter les affaires/Way of work**
