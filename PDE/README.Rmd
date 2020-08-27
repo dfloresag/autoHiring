@@ -69,10 +69,16 @@ params:
 
 - `r params$PhD`
 
-**Date du Doctorat:** `r as.Date(params$Date_of_PhD)`
+**Date du Doctorat:** 
 
-**Taux d'occupation:** `r params$Hiring_Percentage`
+- `r as.Date(params$Date_of_PhD)`
 
-**Lieu de travail:**  `r params$Place_of_Work`
+**Taux d'occupation:** 
+
+- `r params$Hiring_Percentage`
+
+**Lieu de travail:**  
+
+- `r params$Place_of_Work`
 
 **Étranger.e.s: Permis de travail** (joindre une copie) : `r params$Type_of_permit`

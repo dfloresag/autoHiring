@@ -41,10 +41,16 @@ Proposition d’Engagement
 
   - Yes
 
-**Date du Doctorat:** 2017-07-29
+**Date du Doctorat:**
 
-**Taux d’occupation:** 1
+  - 2017-07-29
 
-**Lieu de travail:** Geneva
+**Taux d’occupation:**
+
+  - 1
+
+**Lieu de travail:**
+
+  - Geneva
 
 **Étranger.e.s: Permis de travail** (joindre une copie) : NA
