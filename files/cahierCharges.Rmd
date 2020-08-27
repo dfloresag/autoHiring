@@ -1,0 +1,91 @@
+---
+title: "Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description"
+output: github_document
+params:
+  Last_Name : "Doe"
+  First_Name : "John"
+  AVS_Number : 000
+  Date_of_Birth : !r as.Date("2017-11-12")
+  Address_line_1 : "Rue Somewhere 12" 
+  Address_line_2 : NA
+  City : "Lausanne"
+  Canton : "VD"
+  Country : "CH"
+  Marital_status : "Single" 
+  Count_of_children : "0"
+  PhD : TRUE
+  Date_of_PhD : !r as.Date("2017-11-12")
+  Highest_Degree : NA
+  Date_of_Diploma:  NA
+  Profession_Academic_Focus: "Statistics"
+  Nationality: "CH"
+  Swiss_Origin : "GE"
+  Work_permit  : NA
+  Type_of_work_permit : NA
+  Start_date_availability : !r as.Date("2017-11-12")
+  Role : "EXPERT"
+  Team : "SOME TEAM"
+  Hiring_Percentage : "100" 
+  Place_of_Work : "GE"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##### Name,Vorname/Nom, prénom/Cognome, nome:  
+
+`r params$Last_Name` ,  `r params$First_Name`
+
+#### Geb.-Jahr / Année de naiss./ Date of Birth
+
+`r params$Date_of_Birth`
+
+#### Erlernter Beruf/Prof.apprise/Diploma
+
+```{r}
+if (params$PhD){
+  "PhD"
+} else{
+  "Other"
+}
+
+```
+
+#### Entrée dans l'office / Date of entry
+
+`r params$Start_date_availability`
+
+#### Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt / 
+
+#### Bundesamt, office fédéral / ufficio federale
+
+#### Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory
+
+#### Dienstliche Stellung, Klasse/ Fonction, classe/Funzione, classegegenwärtig/actuelles/attuali / Function,
+
+#### Kl./cl./cl/class of Kl./cl./cl/class of salary 
+
+#### Vorschlag/Proposition/Proposta
+
+#### Kl./cl./cl/class of salary
+ 
+#### Termin/A partir du/A partire dal
+
+#### Dienstverhältnis/Rapports de service/Rapporto d'impiego gegenwärtig/actuels/attuale / Contract duration 
+
+#### Vorschlag/Proposition/Proposta
+
+#### LetzteBeförderung/Dernière promotion/Ultima promozione
+
+#### Dienstverhältnis/Rapports de service/Rapporto d'impiego gegenwärtig/actuels/attuale / Contract duration
+ 
+#### Vorschlag/Proposition/Proposta
+ 
+#### LetzteBeförderung/Dernière promotion/Ultima promozione
+
+#### Tätigkeiten in der Reihenfolge ihrer Bedeutung / Activités par ordre d'importance / Job description
+
+#### % 
+
+#### Art der Erledigung/ Manière de traiter les affaires/Way of work
