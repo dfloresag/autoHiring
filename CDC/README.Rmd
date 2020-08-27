@@ -35,15 +35,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## "Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description"
 
-**Name,Vorname/Nom, prénom/Cognome, nome:**  `r params$Last_Name`, `r params$First_Name`
+**Name,Vorname/Nom, prénom/Cognome, nome:**  
 
-**Geb.-Jahr / Année de naiss./ Date of Birth:** `r params$Date_of_Birth`
+- `r params$Last_Name`, `r params$First_Name`
+
+**Geb.-Jahr / Année de naiss./ Date of Birth:** 
+
+- `r params$Date_of_Birth`
 
 **Erlernter Beruf/Prof.apprise/Diploma:** 
 
-**Entrée dans l'office / Date of entry:** `r params$Start_date_availability`
+**Entrée dans l'office / Date of entry:** 
 
-**Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt **
+- `r params$Start_date`
+
+**Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt**
+
+- `r params$Profession`
 
 **Bundesamt, office fédéral / ufficio federale**
 
@@ -75,4 +83,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **%** 
 
+- `r params$Hiring_Percentage`
+
 **Art der Erledigung/ Manière de traiter les affaires/Way of work**
+

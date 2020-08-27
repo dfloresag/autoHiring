@@ -96,7 +96,7 @@ params:
 ---
 ```
 
-- The [body of the generating document](CDC/README.Rmd) contains placeholders for the values contained in the `params` list, e.g. `params$First_Name`, etc. Rendering them on their own produces a document with `NA`'s instead of the data, but through the `params` argument we can fill them in. Check [this example](CDC/README.md) based on [this form](data/form1.xlsx)
+- The [body of the generating document](PDE/README.Rmd) contains _inline_ placeholders for the values contained in the `params` list, e.g. `params$First_Name`, etc. Rendering them on their own produces a document with `NA`'s instead of the data, but through the `params` argument we can fill them in. Check [this example](PDE/README.md) based on [this form](data/form1.xlsx)
 
 The next step consists in small function and testing all the scenarios with a variety of forms. 
 

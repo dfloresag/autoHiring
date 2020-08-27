@@ -40,13 +40,13 @@ params:
 
 **Etat civil:** `r params$Marital_status`
 
-**Nombre d'enfants:** 
+**Nombre d'enfants:** `r params$Count_of_children`
 
 **Nationalité** (joindre la copie de la pièce d’identité) : `r params$Country`
 
-**Profession:** 
+**Profession:** `r params$Profession`
 
-**Date du diplôme:**
+**Date du diplôme:** `r params$Date_of_Diploma`
 
 **Doctorat**:  `r params$PhD`
 
@@ -54,6 +54,6 @@ params:
 
 **Taux d'occupation:** `r params$Hiring_Percentage`
 
-**Lieu de travail:** 
+**Lieu de travail:**  `r params$Place_of_Work`
 
-**Étranger.e.s: Permis de travail** (joindre une copie) : aucun B C L G autre :
+**Étranger.e.s: Permis de travail** (joindre une copie) : `r params$Type_of_permit`

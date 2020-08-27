@@ -3,15 +3,23 @@ Cahier des charges
 
 ## “Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description”
 
-**Name,Vorname/Nom, prénom/Cognome, nome:** CASE, Justin
+**Name,Vorname/Nom, prénom/Cognome, nome:**
 
-**Geb.-Jahr / Année de naiss./ Date of Birth:** 1991-11-15
+  - CASE, Justin
+
+**Geb.-Jahr / Année de naiss./ Date of Birth:**
+
+  - 1991-11-15
 
 **Erlernter Beruf/Prof.apprise/Diploma:**
 
 **Entrée dans l’office / Date of entry:**
 
-**Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt **
+  - 2020-08-17
+
+**Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt**
+
+  - Statistics
 
 **Bundesamt, office fédéral / ufficio federale**
 
@@ -46,5 +54,7 @@ gegenwärtig/actuels/attuale / Contract duration**
 d’importance / Job description**
 
 **%**
+
+  - 1
 
 **Art der Erledigung/ Manière de traiter les affaires/Way of work**
