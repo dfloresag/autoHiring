@@ -57,9 +57,10 @@ params_list  <-  list(
   )
 ```
 
-Then, the third step, consists in rendering the CDC and PDE files with
-the previous list of parameters using `rmarkdown::render()` with `params
-= params_list`, as in:
+Profession\_Academic\_Focus, Type\_of\_work\_permit,
+Start\_date\_availability Then, the third step, consists in rendering
+the CDC and PDE files with the previous list of parameters using
+`rmarkdown::render()` with `params = params_list`, as in:
 
 ``` r
 rmarkdown::render(

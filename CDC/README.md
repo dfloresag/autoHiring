@@ -3,9 +3,9 @@ Cahier des charges
 
 ## “Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description”
 
-**Name,Vorname/Nom, prénom/Cognome, nome:** NA, NA
+**Name,Vorname/Nom, prénom/Cognome, nome:** CASE, Justin
 
-**Geb.-Jahr / Année de naiss./ Date of Birth:** NA
+**Geb.-Jahr / Année de naiss./ Date of Birth:** 1991-11-15
 
 **Erlernter Beruf/Prof.apprise/Diploma:**
 
