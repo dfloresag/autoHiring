@@ -81,13 +81,16 @@ rmarkdown::render(
 
 ``` yaml
 ---
-title: "Cahier des charges"
+title: "Proposition d'Engagement"
 output: github_document
 params:
   Last_Name         : NA
   First_Name        : NA
   AVS_Number        : NA
+  Date_of_Birth     : NA
   ...
+  ...
+  
 ---
 ```
 

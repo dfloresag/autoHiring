@@ -1,25 +1,45 @@
 Proposition d’Engagement
 ================
 
-**Nom et prénom:** CASE Justin
+**Nom et prénom:**
 
-**N° AVS:** NA
+  - CASE Justin
 
-**Adresse complète:** Rue Voltaire 12 NA
+**N° AVS:**
 
-**Date de naissance:** 1991-11-15
+  - NA
 
-**Etat civil:** Single
+**Adresse complète:**
 
-**Nombre d’enfants:** NA
+  - Rue Voltaire 12 NA
 
-**Nationalité** (joindre la copie de la pièce d’identité) : Switzerland
+**Date de naissance:**
 
-**Profession:** Statistics
+  - 1991-11-15
 
-**Date du diplôme:** 2017-07-29
+**Etat civil:**
 
-**Doctorat**: Yes
+  - Single
+
+**Nombre d’enfants:**
+
+  - NA
+
+**Nationalité** (joindre la copie de la pièce d’identité) :
+
+  - Switzerland
+
+**Profession:**
+
+  - Statistics
+
+**Date du diplôme:**
+
+  - 2017-07-29
+
+**Doctorat**:
+
+  - Yes
 
 **Date du Doctorat:** 2017-07-29
 

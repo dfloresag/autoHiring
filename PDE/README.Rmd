@@ -29,25 +29,45 @@ params:
   Place_of_Work     : NA
 ---
 
-**Nom et prénom:** `r params$Last_Name` `r params$First_Name`
+**Nom et prénom:** 
 
-**N° AVS:**  `r params$AVS_Number`
+- `r params$Last_Name` `r params$First_Name`
 
-**Adresse complète:** `r params$Address_line_1` `r params$Address_line_2`
+**N° AVS:**  
 
-**Date de naissance:** `r params$Date_of_Birth`
+- `r params$AVS_Number`
 
-**Etat civil:** `r params$Marital_status`
+**Adresse complète:** 
 
-**Nombre d'enfants:** `r params$Count_of_children`
+- `r params$Address_line_1` `r params$Address_line_2`
 
-**Nationalité** (joindre la copie de la pièce d’identité) : `r params$Country`
+**Date de naissance:** 
 
-**Profession:** `r params$Profession`
+- `r params$Date_of_Birth`
 
-**Date du diplôme:** `r params$Date_of_Diploma`
+**Etat civil:** 
 
-**Doctorat**:  `r params$PhD`
+- `r params$Marital_status`
+
+**Nombre d'enfants:** 
+
+- `r params$Count_of_children`
+
+**Nationalité** (joindre la copie de la pièce d’identité) : 
+
+- `r params$Country`
+
+**Profession:** 
+
+- `r params$Profession`
+
+**Date du diplôme:** 
+
+- `r params$Date_of_Diploma`
+
+**Doctorat**:  
+
+- `r params$PhD`
 
 **Date du Doctorat:** `r as.Date(params$Date_of_PhD)`
 
