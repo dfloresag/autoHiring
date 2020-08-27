@@ -2,83 +2,85 @@
 title: "Proposition d'Engagement"
 output: github_document
 params:
-  Last_Name         : NA
-  First_Name        : NA
-  AVS_Number        : NA
-  Date_of_Birth     : NA
-  Address_line_1    : NA
-  Address_line_2    : NA
-  City              : NA
-  Canton            : NA
-  Country           : NA
-  Marital_status    : NA
-  Count_of_children : NA
-  PhD               : NA
-  Date_of_PhD       : NA
-  Highest_Degree    : NA
-  Date_of_Diploma   : NA
-  Profession        : NA
-  Nationality       : NA
-  Swiss_Origin      : NA
-  Work_permit       : NA
-  Type_of_permit    : NA
-  Start_date        : NA
-  Role              : NA
-  Team              : NA
-  Hiring_Percentage : NA
-  Place_of_Work     : NA
+  last_name: NA 
+  first_name: NA
+  avs_number: NA
+  date_of_birth: NA 
+  address_line_1: NA 
+  address_line_2: NA
+  city: NA
+  canton: NA  
+  country: NA  
+  marital_status: NA 
+  count_of_children: NA
+  ph_d: NA    
+  date_of_ph_d: NA
+  highest_degree: NA
+  date_of_diploma: NA
+  profession_academic_focus: NA 
+  nationality: NA
+  origin: NA  
+  work_permit: NA
+  type_of_permit: NA
+  start_date_availability: NA
+  role: NA    
+  team: NA
+  hiring_percentage: NA
+  place_of_work: NA 
 ---
 
 **Nom et prénom:** 
 
-- `r params$Last_Name` `r params$First_Name`
+- `r params$last_name` `r params$first_name`
 
 **N° AVS:**  
 
-- `r params$AVS_Number`
+- `r params$avs_number`
 
 **Adresse complète:** 
 
-- `r params$Address_line_1` `r params$Address_line_2`
+- `r params$address_line_1` `r params$address_line_2`
 
 **Date de naissance:** 
 
-- `r params$Date_of_Birth`
+- `r params$date_of_birth`
 
 **Etat civil:** 
 
-- `r params$Marital_status`
+- `r params$marital_status`
 
 **Nombre d'enfants:** 
 
-- `r params$Count_of_children`
+- `r params$count_of_children`
 
 **Nationalité** (joindre la copie de la pièce d’identité) : 
 
-- `r params$Country`
+- `r params$country`
 
 **Profession:** 
 
-- `r params$Profession`
+- `r params$profession`
 
 **Date du diplôme:** 
 
-- `r params$Date_of_Diploma`
+- `r params$date_of_diploma`
 
 **Doctorat**:  
 
-- `r params$PhD`
+- `r params$phd`
 
 **Date du Doctorat:** 
 
-- `r as.Date(params$Date_of_PhD)`
+- `r as.Date(params$date_of_ph_d)`
 
 **Taux d'occupation:** 
 
-- `r params$Hiring_Percentage`
+- `r params$hiring_percentage`
 
 **Lieu de travail:**  
 
-- `r params$Place_of_Work`
+- `r params$place_of_work`
 
-**Étranger.e.s: Permis de travail** (joindre une copie) : `r params$Type_of_permit`
+**Étranger.e.s: Permis de travail** (joindre une copie) : 
+
+- `r params$type_of_permit`

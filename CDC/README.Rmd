@@ -2,31 +2,31 @@
 title: "Cahier des charges"
 output: github_document
 params:
-  Last_Name         : NA
-  First_Name        : NA
-  AVS_Number        : NA
-  Date_of_Birth     : NA
-  Address_line_1    : NA
-  Address_line_2    : NA
-  City              : NA
-  Canton            : NA
-  Country           : NA
-  Marital_status    : NA
-  Count_of_children : NA
-  PhD               : NA
-  Date_of_PhD       : NA
-  Highest_Degree    : NA
-  Date_of_Diploma   : NA
-  Profession        : NA
-  Nationality       : NA
-  Swiss_Origin      : NA
-  Work_permit       : NA
-  Type_of_permit    : NA
-  Start_date        : NA
-  Role              : NA
-  Team              : NA
-  Hiring_Percentage : NA
-  Place_of_Work     : NA
+  last_name: NA 
+  first_name: NA
+  avs_number: NA
+  date_of_birth: NA 
+  address_line_1: NA 
+  address_line_2: NA
+  city: NA
+  canton: NA  
+  country: NA  
+  marital_status: NA 
+  count_of_children: NA
+  ph_d: NA    
+  date_of_ph_d: NA
+  highest_degree: NA
+  date_of_diploma: NA
+  profession_academic_focus: NA 
+  nationality: NA
+  origin: NA  
+  work_permit: NA
+  type_of_permit: NA
+  start_date_availability: NA
+  role: NA    
+  team: NA
+  hiring_percentage: NA
+  place_of_work: NA 
 ---
 
 ```{r setup, include=FALSE}
@@ -37,21 +37,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **Name,Vorname/Nom, prénom/Cognome, nome:**  
 
-- `r params$Last_Name`, `r params$First_Name`
+- `r params$last_name`, `r params$first_name`
 
 **Geb.-Jahr / Année de naiss./ Date of Birth:** 
 
-- `r params$Date_of_Birth`
+- `r params$date_of_birth`
 
 **Erlernter Beruf/Prof.apprise/Diploma:** 
 
 **Entrée dans l'office / Date of entry:** 
 
-- `r params$Start_date`
+- `r params$start_date`
 
 **Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt**
 
-- `r params$Profession`
+- `r params$profession`
 
 **Bundesamt, office fédéral / ufficio federale**
 
@@ -83,7 +83,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **%** 
 
-- `r params$Hiring_Percentage`
+- `r params$hiring_percentage`
 
 **Art der Erledigung/ Manière de traiter les affaires/Way of work**
 

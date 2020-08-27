@@ -3,11 +3,11 @@ Proposition d’Engagement
 
 **Nom et prénom:**
 
-  - CASE Justin
+  - MIGUEL Luis
 
 **N° AVS:**
 
-  - NA
+  - 756.6576.5019.29
 
 **Adresse complète:**
 
@@ -35,15 +35,14 @@ Proposition d’Engagement
 
 **Date du diplôme:**
 
-  - 2017-07-29
+  - 2021-07-28
 
 **Doctorat**:
 
-  - Yes
-
+  - 
 **Date du Doctorat:**
 
-  - 2017-07-29
+  - 2021-07-28
 
 **Taux d’occupation:**
 
@@ -53,4 +52,6 @@ Proposition d’Engagement
 
   - Geneva
 
-**Étranger.e.s: Permis de travail** (joindre une copie) : NA
+**Étranger.e.s: Permis de travail** (joindre une copie) :
+
+  - NA
