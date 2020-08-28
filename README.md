@@ -29,21 +29,22 @@ The second step consists in storing the extracted values in a `list`.
 params_list <-  as.list(person)
 ```
 
-(There’s some tweaking to be done with de dates. I’ll find a more
-elegant way to do this)
+There’s some tweaking to be done with the dates as, when imported from
+Excel, they provide the ‘days since’ an origin set in “1899-12-30”.
+(Just to say that there has to be a more elegant way to do this.)
 
 ``` r
 params_list$date_of_birth <- 
   params_list$date_of_birth %>% 
-  as.numeric()%>% as.Date(origin = "1904-01-01")
+  as.numeric()%>% as.Date(origin = "1899-12-30")
 
 params_list$date_of_ph_d <- 
   params_list$date_of_ph_d %>% 
-  as.numeric() %>% as.Date(origin = "1904-01-01")
+  as.numeric() %>% as.Date(origin = "1899-12-30")
 
 params_list$date_of_diploma <- 
   params_list$date_of_diploma%>% 
-  as.numeric() %>% as.Date(origin = "1904-01-01")
+  as.numeric() %>% as.Date(origin = "1899-12-30")
 ```
 
 Then, the third step, consists in rendering the CDC and PDE files with
