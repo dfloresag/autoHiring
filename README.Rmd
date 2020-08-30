@@ -10,7 +10,7 @@ The most simple way to generate a form consists in generating a [_parametrized r
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, 
                       error =TRUE, 
-                      eval = FALSE)
+                      eval = TRUE)
 ```
 
 ```{r packs, include = FALSE}
@@ -19,6 +19,7 @@ library(tidyr)
 library(readxl)
 library(stringr)
 library(anytime)
+library(janitor)
 ```
 
 To do this, one can start by extracting the data from the properly formatted Excel sheet. Here, we are only interested in the fields and their. 
@@ -91,4 +92,30 @@ params:
 
 The next step consists in small function and testing all the scenarios with a variety of forms. 
 
+## Using the Master document
 
+```{r extract_person}
+person <- 
+  readxl::read_excel(path = "data/form_master.xlsx", skip = 3, sheet = 1) %>% 
+  clean_names() %>% 
+  select(x1,your_details) %>%
+  pivot_wider(names_from = x1, values_from = your_details) %>% 
+  janitor::clean_names()
+```
+
+
+```{r extract_person_cdc}
+details_cdc <- 
+  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 2, col_names = FALSE) %>% 
+  janitor::clean_names() %>% 
+  pivot_wider(names_from = x1, values_from = x2) %>% 
+  janitor::clean_names()
+```
+
+```{r extract_person_pde}
+details_pde <- 
+  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 3, col_names = FALSE) %>% 
+  janitor::clean_names() %>% 
+  pivot_wider(names_from = x1, values_from = x2) %>% 
+  janitor::clean_names()
+```

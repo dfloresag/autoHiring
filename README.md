@@ -92,3 +92,30 @@ params:
 
 The next step consists in small function and testing all the scenarios
 with a variety of forms.
+
+## Using the Master document
+
+``` r
+person <- 
+  readxl::read_excel(path = "data/form_master.xlsx", skip = 3, sheet = 1) %>% 
+  clean_names() %>% 
+  select(x1,your_details) %>%
+  pivot_wider(names_from = x1, values_from = your_details) %>% 
+  janitor::clean_names()
+```
+
+``` r
+details_cdc <- 
+  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 2, col_names = FALSE) %>% 
+  janitor::clean_names() %>% 
+  pivot_wider(names_from = x1, values_from = x21) %>% 
+  janitor::clean_names()
+```
+
+``` r
+details_pde <- 
+  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 3, col_names = FALSE) %>% 
+  janitor::clean_names() %>% 
+  pivot_wider(names_from = x1, values_from = x2) %>% 
+  janitor::clean_names()
+```
