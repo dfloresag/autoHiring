@@ -2,60 +2,46 @@
 title: "Cahier des charges"
 output: github_document
 params:
-  last_name: NA 
-  first_name: NA
-  avs_number: NA
-  date_of_birth: NA 
-  address_line_1: NA 
-  address_line_2: NA
-  city: NA
-  canton: NA  
-  country: NA  
-  marital_status: NA 
-  count_of_children: NA
-  ph_d: NA    
-  date_of_ph_d: NA
-  highest_degree: NA
-  date_of_diploma: NA
-  profession_academic_focus: NA 
-  nationality: NA
-  origin: NA  
-  work_permit: NA
-  type_of_permit: NA
-  start_date_availability: NA
-  role: NA    
-  team: NA
-  hiring_percentage: NA
-  place_of_work: NA 
+  nom: NA                                  
+  prenom: NA                               
+  annee_de_naiss: NA                       
+  prof_apprise_diploma: NA                 
+  entree_dans_loffice: NA                  
+  office_federal: NA                       
+  secteur_unite: NA                        
+  fonction: NA                             
+  classe: NA                               
+  a_partir_du: NA                          
+  rapports_de_service_contract_duration: NA
+  activites: NA                            
+  percent: NA                              
+  maniere_de_traiter_les_affaires: NA      
+  superieur_e_direct_e: NA                 
+  
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## "Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description"
 
 |    |    | 
 | -------------- | --------------- | 
-| **Name,Vorname/Nom, prénom/Cognome, nome:**  |`r params$last_name`, `r params$first_name` | 
-| **Geb.-Jahr / Année de naiss./ Date of Birth:**  | `r params$date_of_birth`|
+| **Name,Vorname/Nom, prénom/Cognome, nome:**  |`r params$nom`, `r params$prenom` | 
+| **Geb.-Jahr / Année de naiss./ Date of Birth:**  | `r params$annee_de_naiss`|
 | **Erlernter Beruf/Prof.apprise/Diploma:** |  | 
-| **Entrée dans l'office / Date of entry:** |  `r params$start_date`|
-| **Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt** | `r params$profession`| 
-| **Bundesamt, office fédéral / ufficio federale** |  | 
-| **Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory** |  |
-| **Dienstliche Stellung, Klasse/ Fonction, classe/Funzione, classegegenwärtig/actuelles/attuali / Function** |  | 
-| **Kl./cl./cl/class of Kl./cl./cl/class of salary** | | 
+| **Entrée dans l'office / Date of entry:** |  `r params$prof_apprise_diploma`|
+| **Erlernter Beruf/Prof.apprise/Diploma Eintritt in das heutige Amt** | `r params$entree_dans_loffice`| 
+| **Bundesamt, office fédéral / ufficio federale** | `r params$office_federal` | 
+| **Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory** |  `r params$secteur_unite`|
+| **Dienstliche Stellung, Klasse/ Fonction, classe/Funzione, classegegenwärtig/actuelles/attuali / Function** |`r params$fonction`,`r params$classe` | 
+| **Kl./cl./cl/class of Kl./cl./cl/class of salary** |`r params$office_federal` | 
 | **Vorschlag/Proposition/Proposta** | | 
 | **Kl./cl./cl/class of salary** | | 
-| **Termin/A partir du/A partire dal** | | 
-| **Dienstverhältnis/Rapports de service/Rapporto d'impiego gegenwärtig/actuels/attuale / Contract duration** | | 
+| **Termin/A partir du/A partire dal** |`r params$a_partir_du` | 
+| **Dienstverhältnis/Rapports de service/Rapporto d'impiego gegenwärtig/actuels/attuale / Contract duration** |`r params$rapports_de_service_contract_duration` | 
 | **Vorschlag/Proposition/Proposta** |  | 
 | **LetzteBeförderung/Dernière promotion/Ultima promozione**| | 
-| **Dienstverhältnis/Rapports de service/Rapporto d'impiego gegenwärtig/actuels/attuale / Contract duration** | | 
-| **Vorschlag/Proposition/Proposta** | |
-| **LetzteBeförderung/Dernière promotion/Ultima promozione** | |
+| **Vorschlag/Proposition/Proposta** |`r params$office_federal` |
+| **LetzteBeförderung/Dernière promotion/Ultima promozione** | `r params$office_federal`|
 | **Tätigkeiten in der Reihenfolge ihrer Bedeutung / Activités par ordre d'importance / Job description**| | 
 | **%**  | `r params$hiring_percentage` | 
-| **Art der Erledigung/ Manière de traiter les affaires/Way of work** | |
+| **Art der Erledigung/ Manière de traiter les affaires/Way of work** | `r params$maniere_de_traiter_les_affaires`|
 

@@ -2,46 +2,48 @@
 title: "Proposition d'Engagement"
 output: github_document
 params:
-  last_name: NA 
-  first_name: NA
-  avs_number: NA
-  date_of_birth: NA 
-  address_line_1: NA 
-  address_line_2: NA
-  city: NA
-  canton: NA  
-  country: NA  
-  marital_status: NA 
-  count_of_children: NA
-  ph_d: NA    
-  date_of_ph_d: NA
-  highest_degree: NA
-  date_of_diploma: NA
-  profession_academic_focus: NA 
-  nationality: NA
-  origin: NA  
-  work_permit: NA
-  type_of_permit: NA
-  start_date_availability: NA
-  role: NA    
-  team: NA
-  hiring_percentage: NA
-  place_of_work: NA 
+  fonction: NA            
+  engagement_du: NA      
+  engagement_au: NA       
+  support_type: NA       
+  type_of_contract: NA    
+  fianncement_percent: NA
+  financial_funds: NA     
+  nom: NA                
+  prenom: NA              
+  n_avs: NA              
+  address_line_1: NA      
+  address_line_2: NA     
+  city: NA                
+  canton: NA             
+  country: NA             
+  date_de_naissance: NA  
+  etat_civil: NA          
+  nombre_denfants: NA    
+  lieu_d_origine: NA      
+  nationalite: NA        
+  profession: NA          
+  doctorat: NA           
+  date_du_diplome: NA     
+  date_du_doctorat: NA   
+  taux_doccupation: NA    
+  lieu_de_travail: NA    
+  permis_de_travail: NA  
 ---
 
 |    |    |
 | -------------- | --------------- |
-| **Nom et prénom:** | `r params$last_name` `r params$first_name` |
-| **N° AVS:**  | `r params$avs_number` |
+| **Nom et prénom:** | `r params$nom` `r params$prenom` |
+| **N° AVS:**  | `r params$n_avs` |
 | **Adresse complète:**  |  `r params$address_line_1` `r params$address_line_2` |
-| **Date de naissance:** |  `r params$date_of_birth`|
-| **Etat civil:**  | `r params$marital_status` |
-| **Nombre d'enfants:**  | `r params$count_of_children` |
-| **Nationalité** (joindre la copie de la pièce d’identité) | `r params$country` |
+| **Date de naissance:** |  `r params$date_de_naissance`|
+| **Etat civil:**  | `r params$etat_civil` |
+| **Nombre d'enfants:**  | `r params$nombre_denfants` |
+| **Nationalité** (joindre la copie de la pièce d’identité) | `r params$nationalite` |
 | **Profession:** | `r params$profession` |
-| **Date du diplôme:** |  `r params$date_of_diploma` |
-| **Doctorat**:  |  `r params$phd` |
-| **Date du Doctorat:**  |  `r as.Date(params$date_of_ph_d)`|
-| **Taux d'occupation:** | `r params$hiring_percentage` |
-| **Lieu de travail:**  |  `r params$place_of_work` |
-| **Étranger.e.s: Permis de travail** (joindre une copie) : | `r params$type_of_permit` |
+| **Date du diplôme:** |  `r params$date_du_diplome` |
+| **Doctorat**:  |  `r params$doctorat` |
+| **Date du Doctorat:**  |  `r params$date_du_doctorat`|
+| **Taux d'occupation:** | `r params$taux_doccupation` |
+| **Lieu de travail:**  |  `r params$lieu_de_travail` |
+| **Étranger.e.s: Permis de travail** (joindre une copie) : | `r params$permis_de_travail` |

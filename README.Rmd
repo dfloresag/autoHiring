@@ -14,60 +14,91 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 ```{r packs, include = FALSE}
-library(dplyr)
-library(tidyr)
+library(tidyverse)
 library(readxl)
-library(stringr)
-library(anytime)
 library(janitor)
 ```
 
-To do this, one can start by extracting the data from the properly formatted Excel sheet. Here, we are only interested in the fields and their. 
+To do this, one can start by extracting the data from the properly formatted Excel sheet. Here, we are only interested in the fields and their. We have the data stored in the form `form_master.xlsx`. 
 
-```{r extract_data}
-person <- 
-  readxl::read_excel(path = "data/form2.xlsx", skip = 3) %>% 
-  select(`FIELD`,`YOUR DETAILS`) %>% 
+We can extract the contents of the sheets `CdC` and `Proposition d'engagement`
+
+```{r extract_person_cdc, message = FALSE}
+cdc <- 
+  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 2, col_names = FALSE) %>% 
   janitor::clean_names() %>% 
-  pivot_wider(names_from = field, values_from = your_details) %>% 
+  pivot_wider(names_from = x1, values_from = x2) %>% 
+  janitor::clean_names()
+
+pde <- 
+  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 3, col_names = FALSE) %>% 
+  janitor::clean_names() %>% 
+  pivot_wider(names_from = x1, values_from = x2) %>% 
   janitor::clean_names()
 ```
+
+
+
 
 The second step consists in storing the extracted values in a `list`.
 
 ```{r}
-params_list <-  as.list(person)
+params_cdc <-  as.list(cdc)
+params_pde <-  as.list(pde)
 ```
 
 There's some tweaking to be done with the dates as, when imported from Excel, they provide the 'days since' an origin set in  "1899-12-30". (Just to say that there has to be a more elegant way to do this.) 
 
 ```{r}
-params_list$date_of_birth <- 
-  params_list$date_of_birth %>% 
-  as.numeric()%>% as.Date(origin = "1899-12-30")
+set_date_origin <-  function(x) {
+  if(!is.na(x) ){
+    if(x==0){
+      x <- NA
+    } else {
+      x <- x %>% 
+        as.numeric() %>% 
+        as.Date(origin = "1899-12-30")
+    }
+  }
+  x
+}
 
-params_list$date_of_ph_d <- 
-  params_list$date_of_ph_d %>% 
-  as.numeric() %>% as.Date(origin = "1899-12-30")
+params_cdc$entree_dans_loffice<- 
+  set_date_origin(params_cdc$entree_dans_loffice)
 
-params_list$date_of_diploma <- 
-  params_list$date_of_diploma%>% 
-  as.numeric() %>% as.Date(origin = "1899-12-30")
+params_cdc$a_partir_du <- 
+  set_date_origin(params_cdc$a_partir_du) 
+  
+params_cdc$annee_de_naiss <- 
+  set_date_origin(params_cdc$annee_de_naiss)
+  
+params_pde$engagement_du <- 
+  set_date_origin(params_pde$engagement_du)
+   
+params_pde$engagement_au <- 
+  set_date_origin(params_pde$engagement_au)
 
+params_pde$date_de_naissance <- 
+  set_date_origin(params_pde$date_de_naissance)
+
+params_pde$date_du_diplome <- 
+  set_date_origin(params_pde$date_du_diplome)
+
+params_pde$date_du_doctorat <- 
+  set_date_origin(params_pde$date_du_doctorat)
 ```
-
 
 Then, the third step, consists in rendering the CDC and PDE files with the previous list of parameters using `rmarkdown::render()` with `params = params_list`, as in:
 
 ```{r render_docs}
 rmarkdown::render(
   input = "CDC/README.Rmd", 
-  params = params_list
+  params = params_cdc
   )
 
 rmarkdown::render(
   input = "PDE/README.Rmd",
-  params = params_list
+  params = params_pde
   )
 ```
 
@@ -92,7 +123,9 @@ params:
 
 The next step consists in small function and testing all the scenarios with a variety of forms. 
 
-## Using the Master document
+# Second Approach: One master file - Three sheets
+
+To fill the missing fields, one can think of constructing.  
 
 ```{r extract_person, message = FALSE}
 person <- 
@@ -102,27 +135,6 @@ person <-
   pivot_wider(names_from = x1, values_from = your_details) %>% 
   janitor::clean_names()
 
-person
-```
-
-
-```{r extract_person_cdc, message = FALSE}
-details_cdc <- 
-  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 2, col_names = FALSE) %>% 
-  janitor::clean_names() %>% 
-  pivot_wider(names_from = x1, values_from = x2) %>% 
-  janitor::clean_names()
-details_cdc
-```
-
-```{r extract_person_pde, message = FALSE}
-details_pde <- 
-  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 3, col_names = FALSE) %>% 
-  janitor::clean_names() %>% 
-  pivot_wider(names_from = x1, values_from = x2) %>% 
-  janitor::clean_names()
-
-details_pde
 ```
 
 
