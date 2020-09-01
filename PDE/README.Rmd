@@ -29,58 +29,19 @@ params:
   place_of_work: NA 
 ---
 
-**Nom et prénom:** 
-
-- `r params$last_name` `r params$first_name`
-
-**N° AVS:**  
-
-- `r params$avs_number`
-
-**Adresse complète:** 
-
-- `r params$address_line_1` `r params$address_line_2`
-
-**Date de naissance:** 
-
-- `r params$date_of_birth`
-
-**Etat civil:** 
-
-- `r params$marital_status`
-
-**Nombre d'enfants:** 
-
-- `r params$count_of_children`
-
-**Nationalité** (joindre la copie de la pièce d’identité) : 
-
-- `r params$country`
-
-**Profession:** 
-
-- `r params$profession`
-
-**Date du diplôme:** 
-
-- `r params$date_of_diploma`
-
-**Doctorat**:  
-
-- `r params$phd`
-
-**Date du Doctorat:** 
-
-- `r as.Date(params$date_of_ph_d)`
-
-**Taux d'occupation:** 
-
-- `r params$hiring_percentage`
-
-**Lieu de travail:**  
-
-- `r params$place_of_work`
-
-**Étranger.e.s: Permis de travail** (joindre une copie) : 
-
-- `r params$type_of_permit`
+|    |    |
+| -------------- | --------------- |
+| **Nom et prénom:** | `r params$last_name` `r params$first_name` |
+| **N° AVS:**  | `r params$avs_number` |
+| **Adresse complète:**  |  `r params$address_line_1` `r params$address_line_2` |
+| **Date de naissance:** |  `r params$date_of_birth`|
+| **Etat civil:**  | `r params$marital_status` |
+| **Nombre d'enfants:**  | `r params$count_of_children` |
+| **Nationalité** (joindre la copie de la pièce d’identité) | `r params$country` |
+| **Profession:** | `r params$profession` |
+| **Date du diplôme:** |  `r params$date_of_diploma` |
+| **Doctorat**:  |  `r params$phd` |
+| **Date du Doctorat:**  |  `r as.Date(params$date_of_ph_d)`|
+| **Taux d'occupation:** | `r params$hiring_percentage` |
+| **Lieu de travail:**  |  `r params$place_of_work` |
+| **Étranger.e.s: Permis de travail** (joindre une copie) : | `r params$type_of_permit` |
