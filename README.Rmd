@@ -94,28 +94,35 @@ The next step consists in small function and testing all the scenarios with a va
 
 ## Using the Master document
 
-```{r extract_person}
+```{r extract_person, message = FALSE}
 person <- 
   readxl::read_excel(path = "data/form_master.xlsx", skip = 3, sheet = 1) %>% 
-  clean_names() %>% 
+  janitor::clean_names() %>% 
   select(x1,your_details) %>%
   pivot_wider(names_from = x1, values_from = your_details) %>% 
   janitor::clean_names()
+
+person
 ```
 
 
-```{r extract_person_cdc}
+```{r extract_person_cdc, message = FALSE}
 details_cdc <- 
   readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 2, col_names = FALSE) %>% 
   janitor::clean_names() %>% 
   pivot_wider(names_from = x1, values_from = x2) %>% 
   janitor::clean_names()
+details_cdc
 ```
 
-```{r extract_person_pde}
+```{r extract_person_pde, message = FALSE}
 details_pde <- 
   readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 3, col_names = FALSE) %>% 
   janitor::clean_names() %>% 
   pivot_wider(names_from = x1, values_from = x2) %>% 
   janitor::clean_names()
+
+details_pde
 ```
+
+
