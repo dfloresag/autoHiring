@@ -4,9 +4,9 @@ autoHiring
 This is a bricks and mortar skeleton of an idea on how to automatise the
 production of the documents needed in the hiring process.
 
-The most simple way to generate a form consists in generating a
+The most simple way to generate a form consists in generating
 [*parametrized
-report*](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F#Passing_Parameters)
+reports*](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F#Passing_Parameters)
 by extracting the data from the excel file and passing it to the
 `rmarkdown::render()` function as the `params` argument.
 
@@ -15,7 +15,7 @@ formatted Excel sheet. Here, we are only interested in the fields and
 their. We have the data stored in the form `form_master.xlsx`.
 
 We can extract the contents of the sheets `CdC` and `Proposition
-d'engagement`
+d'engagement`.
 
 ``` r
 cdc <- 
@@ -31,7 +31,8 @@ pde <-
   janitor::clean_names()
 ```
 
-The second step consists in storing the extracted values in a `list`.
+The second step consists in storing the extracted values in two
+parameters lists.
 
 ``` r
 params_cdc <-  as.list(cdc)
@@ -105,7 +106,7 @@ rmarkdown::render(
     ## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS README.md --to html4 --from gfm --output README.html --standalone --self-contained --highlight-style pygments --template /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/templates/github_document/resources/preview.html --variable 'github-markdown-css:/Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/templates/github_document/resources/github.css' --email-obfuscation none --metadata pagetitle=PREVIEW
 
     ## 
-    ## Preview created: /var/folders/0r/lz5zqtk16jzfphyl_nphc2hr0000gp/T//RtmpEjZjkU/preview-31e0401d465b.html
+    ## Preview created: /var/folders/0r/lz5zqtk16jzfphyl_nphc2hr0000gp/T//RtmpEjZjkU/preview-34b123c78c7d.html
 
     ## 
     ## Output created: README.md
@@ -130,7 +131,7 @@ rmarkdown::render(
     ## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS README.md --to html4 --from gfm --output README.html --standalone --self-contained --highlight-style pygments --template /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/templates/github_document/resources/preview.html --variable 'github-markdown-css:/Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/templates/github_document/resources/github.css' --email-obfuscation none --metadata pagetitle=PREVIEW
 
     ## 
-    ## Preview created: /var/folders/0r/lz5zqtk16jzfphyl_nphc2hr0000gp/T//RtmpEjZjkU/preview-31e041f6213f.html
+    ## Preview created: /var/folders/0r/lz5zqtk16jzfphyl_nphc2hr0000gp/T//RtmpEjZjkU/preview-34b11d874e5.html
     ## 
     ## Output created: README.md
 
@@ -159,20 +160,7 @@ params:
     e.g. `params$first_name`, etc. Rendering them on their own produces
     a document with `NA`’s instead of the data, but through the `params`
     argument we can fill them in. Check [this example](PDE/README.md)
-    based on [this form](data/form2.xlsx)
+    based on [this form](data/form_master.xlsx)
 
 The next step consists in small function and testing all the scenarios
 with a variety of forms.
-
-# Second Approach: One master file - Three sheets
-
-To fill the missing fields, one can think of constructing.
-
-``` r
-person <- 
-  readxl::read_excel(path = "data/form_master.xlsx", skip = 3, sheet = 1) %>% 
-  janitor::clean_names() %>% 
-  select(x1,your_details) %>%
-  pivot_wider(names_from = x1, values_from = your_details) %>% 
-  janitor::clean_names()
-```
