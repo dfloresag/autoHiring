@@ -1,6 +1,6 @@
 ---
 title: "Cahier des charges"
-output: github_document
+# output: github_document
 params:
   nom: NA                                  
   prenom: NA                               

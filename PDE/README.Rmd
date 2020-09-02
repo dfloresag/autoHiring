@@ -1,6 +1,6 @@
 ---
 title: "Proposition d'Engagement"
-output: github_document
+# output: github_document
 params:
   fonction: NA            
   engagement_du: NA      
