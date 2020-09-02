@@ -11,11 +11,8 @@ by extracting the data from the excel file and passing it to the
 `rmarkdown::render()` function as the `params` argument.
 
 To do this, one can start by extracting the data from the properly
-formatted Excel sheet. Here, we are only interested in the fields and
-their. We have the data stored in the form `form_master.xlsx`.
-
-We can extract the contents of the sheets `CdC` and `Proposition
-d'engagement`.
+formatted Excel sheet. Here, we are only interested in the sheets 2 and
+3, which contain the things .
 
 ``` r
 extract_and_clean_sheet <- function(file_path, which_sheet){
@@ -27,7 +24,14 @@ extract_and_clean_sheet <- function(file_path, which_sheet){
     janitor::clean_names() %>% 
     as.list()
 }
+```
 
+There’s some tweaking to be done with the dates as, when imported from
+Excel, they provide the ‘days since’ an origin set in “1899-12-30”.
+(Just to say that there has to be a more elegant way to do this.) For
+this, we create the function `set_date_origins()`.
+
+``` r
 set_date_origin <-  function(x) {
   if(!is.na(x) ){
     if(x==0){
@@ -40,8 +44,14 @@ set_date_origin <-  function(x) {
     }
   }
 }
+```
 
+With these elements, we construct the function that renders the
+documents in two formats: `.pdf` and `.md`.
 
+### `render_cdc()`
+
+``` r
 render_cdc <- function(file_path){
   
   params_cdc <- 
@@ -58,8 +68,11 @@ render_cdc <- function(file_path){
   )
   params_cdc
 }
+```
 
+### `render_pde()`
 
+``` r
 render_pde <- function(file_path){
   
   params_pde <- 
@@ -90,9 +103,19 @@ render_pde <- function(file_path){
 }
 ```
 
+  - We set the `file_path`
+
+<!-- end list -->
+
 ``` r
 file_path  <- "data/EPFL Extension School-Personal Details-MASTER-for Daniel-02SEP2020.xlsx"
+```
 
+  - Render the *Cahier des charges* with `render_cdc()`
+
+<!-- end list -->
+
+``` r
 render_cdc(file_path)
 ```
 
@@ -100,9 +123,68 @@ render_cdc(file_path)
     ##    inline R code fragments
     ## 
     ## 
-    ## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS README.utf8.md --to latex --from markdown+autolink_bare_uris+tex_math_single_backslash --output README.tex --self-contained --highlight-style tango --pdf-engine pdflatex --variable graphics --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmd/lua/pagebreak.lua --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmd/lua/latex-div.lua --variable 'geometry:margin=1in'
+    ## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS README.utf8.md --to latex --from markdown+autolink_bare_uris+tex_math_single_backslash --output README.tex --self-contained --highlight-style tango --pdf-engine pdflatex --variable graphics --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmd/lua/pagebreak.lua --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmd/lua/latex-div.lua --variable 'geometry:margin=1in' 
+    ##   |                                                                              |                                                                      |   0%  |                                                                              |......................................................................| 100%
+    ##    inline R code fragments
+    ## 
+    ## 
+    ## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS README.utf8.md --to gfm --from markdown+autolink_bare_uris+tex_math_single_backslash --output README.md --standalone --template /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/templates/github_document/resources/default.md 
+    ## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS README.md --to html4 --from gfm --output README.html --standalone --self-contained --highlight-style pygments --template /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/templates/github_document/resources/preview.html --variable 'github-markdown-css:/Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/templates/github_document/resources/github.css' --email-obfuscation none --metadata pagetitle=PREVIEW
 
-    ## Error: LaTeX failed to compile README.tex. See https://yihui.org/tinytex/r/#debugging for debugging tips. See README.log for more info.
+    ## $nom
+    ## [1] "SMITH"
+    ## 
+    ## $prenom
+    ## [1] "Francesca"
+    ## 
+    ## $annee_de_naiss
+    ## [1] NA
+    ## 
+    ## $prof_apprise_diploma
+    ## [1] "0"
+    ## 
+    ## $entree_dans_loffice
+    ## [1] NA
+    ## 
+    ## $office_federal
+    ## [1] "EPFL"
+    ## 
+    ## $secteur_unite
+    ## [1] "VPE-EXTS"
+    ## 
+    ## $fonction
+    ## [1] "0"
+    ## 
+    ## $classe
+    ## [1] NA
+    ## 
+    ## $a_partir_du
+    ## [1] NA
+    ## 
+    ## $rapports_de_service_contract_duration
+    ## [1] "Fixed-term contract (1 year)"
+    ## 
+    ## $intro_cd_c_string
+    ## [1] "Francesca SMITH is hired as a Course Developer and Instructor for the Web/Code team of the EPFL Extension School, under the supervision of  Nico Schuele. S/he will focus on the following key tasks:"
+    ## 
+    ## $activites_1
+    ## [1] "• Developing data science course material in collaboration with the other course developers for a range of courses for learners at various levels;\r\n• Providing 1-to-1, group and automated learner support (including forum/chat/ video conference/project feedback);\r\n• Guiding learners in acquiring hands-on data science experience using R (all tidyverse libraries, html widgets, shiny, ...);\r\n• Producing online learning materials (course videos, scripts, written materials, illustrations, on-screen materials, exercises, quizzes, coding auto-correcting exercises, etc.);\r\n• Applying technical expertise and leadership skills to design, develop, manage and grade learner projects using real-world datasets (coming from flat files, relational databases, APIs and/or scraping);\r\n• Providing coaching and learner support for defining and shaping capstone project proposals, support during the capstone project and grading/assessment of final capstone submissions;\r\n• Application of grading system for course and capstone projects within parameters of EPFL- defined rules;\r\n• Designing and leading workshops and hackathons, and participating in conferences to promote the EPFL Extension School, data science and digital skills to a wide audience;\r\n• Contribution to EXTS promotion, marketing and business development efforts; acting as \"Brand Ambassador/Evangelist\" for the EPFL Extension School at events and through online and offline communications;\r\n• Collaborating with partners from academia and the private sector to identify opportunities for development of new courses, workshops and partnerships as well as learner course projects and capstone projects, where relevant;\r\n• Contribution to EPFL Extension School online learning platform development;\r\n• Manage additional course development and other activities to support the growth of the\r\nEPFL Extension School;\r\n• Represent the EPFL Extension School (conferences, workshops, events, etc.) as needed;\r\n• Remain informed, through training and otherwise, about developments in the open source\r\ntools that are relevant to the skills we teach, focused on the tools that we teach ourselves, but also maintain an awareness of other relevant tools, with the aim of keeping the educational content and support that we provide relevant.\r\n• General contribution to the overall development and success of the EPFL Extension School"
+    ## 
+    ## $percent_et_maniere_de_traiter_les_affaires_1
+    ## [1] "100%, independently/in collaboration"
+    ## 
+    ## $activites_2
+    ## [1] NA
+    ## 
+    ## $percent_et_maniere_de_traiter_les_affaires_2
+    ## [1] "20%, in collaboration"
+    ## 
+    ## $superieur_e_direct_e
+    ## [1] "Nico Schuele"
+
+  - And the *Proposition d’Engagement* with `render_pde()`
+
+<!-- end list -->
 
 ``` r
 render_pde(file_path)
@@ -224,43 +306,11 @@ render_pde(file_path)
     ## $cdt
     ## [1] NA
 
-The second step consists in storing the extracted values in two
-parameters lists.
+### A word on the principle
 
-``` r
-params_cdc <- 
-  extract_and_clean_sheet(path_file=path_file, which_sheet = 2)
-```
-
-    ## Error in extract_and_clean_sheet(path_file = path_file, which_sheet = 2): unused argument (path_file = path_file)
-
-``` r
-params_pde <- 
-  extract_and_clean_sheet(path_file=path_file, which_sheet = 3)
-```
-
-    ## Error in extract_and_clean_sheet(path_file = path_file, which_sheet = 3): unused argument (path_file = path_file)
-
-There’s some tweaking to be done with the dates as, when imported from
-Excel, they provide the ‘days since’ an origin set in “1899-12-30”.
-(Just to say that there has to be a more elegant way to do this.)
-
-Then, the third step, consists in rendering the CDC and PDE files with
-the previous list of parameters using `rmarkdown::render()` with `params
-= params_list`, as in:
-
-``` r
-rmarkdown::render(
-  input = "PDE/README.Rmd",
-  params = params_pde, 
-  output_format = c("pdf_document", "github_document")
-  )
-```
-
-    ## Error in knit_params_get(input_lines, params): object 'params_pde' not found
-
-  - The YAML of the generating documents contain a `params` argument
-    with initial values set to `NA`.
+  - The basic principle consists in having a YAML of the generating
+    documents contain a `params` argument with initial values set to
+    `NA`.
 
 <!-- end list -->
 

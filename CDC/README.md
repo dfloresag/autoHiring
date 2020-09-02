@@ -18,9 +18,10 @@ Cahier des charges
 | **Termin / A partir du / A partire dal / Since**                                                                |              NA              |
 | **Dienstverhältnis gegenwärtig / Rapports de service actuels / Rapporto d’impiego attuale / Contract duration** | Fixed-term contract (1 year) |
 | **Vorschlag / Proposition/Proposta**                                                                            |                              |
-| **Letzte Beförderung / Dernière promotion / Ultima promozione**                                                 |             EPFL             |
+| **Letzte Beförderung / Dernière promotion / Ultima promozione**                                                 |                              |
 | **%**                                                                                                           |                              |
 | **Art der Erledigung / Manière de traiter les affaires / Way of work**                                          |                              |
+| **Direkte/r Vorgesetzte/r / Supérieur/e directe / Superiore diretto/a**                                         |         Nico Schuele         |
 
 ### Activités par ordre d’importance
 

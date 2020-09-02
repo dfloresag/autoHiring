@@ -38,9 +38,10 @@ params:
 | **Termin / A partir du / A partire dal / Since** |`r params$a_partir_du` | 
 | **Dienstverhältnis gegenwärtig / Rapports de service actuels / Rapporto d'impiego attuale / Contract duration** |`r params$rapports_de_service_contract_duration` | 
 | **Vorschlag / Proposition/Proposta** |  | 
-| **Letzte Beförderung / Dernière promotion / Ultima promozione** | `r params$office_federal`|
+| **Letzte Beförderung / Dernière promotion / Ultima promozione** | |
 | **%**  | `r params$hiring_percentage` | 
-| **Art der Erledigung / Manière de traiter les affaires / Way of work** | `r params$maniere_de_traiter_les_affaires`|
+| **Art der Erledigung / Manière de traiter les affaires / Way of work** | `r params$maniere_de_traiter_les_affaires_1`|
+| **Direkte/r Vorgesetzte/r / Supérieur/e directe / Superiore diretto/a** | `r params$superieur_e_direct_e`|
 
 ### Activités par ordre d'importance
 

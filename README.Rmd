@@ -20,15 +20,14 @@ library(readxl)
 library(janitor)
 ```
 
-To do this, one can start by extracting the data from the properly formatted Excel sheet. Here, we are only interested in the fields and their. 
-
 ```{r start_from_scratch, include = FALSE}
 rm(list = ls())
 ```
 
+To do this, one can start by extracting the data from the properly formatted Excel sheet. Here, we are only interested in the sheets 2 and 3, which contain the things    . 
 ```{r}
 extract_and_clean_sheet <- function(file_path, which_sheet){
-  readxl::read_excel(path = file_path, skip = 1, 
+  readxl::read_xlsx(path = file_path, skip = 1, 
                      sheet = which_sheet, 
                      col_names = FALSE) %>% 
     janitor::clean_names() %>% 
@@ -38,7 +37,7 @@ extract_and_clean_sheet <- function(file_path, which_sheet){
 }
 ```
 
-There's some tweaking to be done with the dates as, when imported from Excel, they provide the 'days since' an origin set in  "1899-12-30". (Just to say that there has to be a more elegant way to do this.) 
+There's some tweaking to be done with the dates as, when imported from Excel, they provide the 'days since' an origin set in  "1899-12-30". (Just to say that there has to be a more elegant way to do this.) For this, we create the function `set_date_origins()`. 
 
 ```{r}
 set_date_origin <-  function(x) {
@@ -53,8 +52,13 @@ set_date_origin <-  function(x) {
     }
   }
 }
+```
 
+With these elements, we construct the function that renders the documents in two formats: `.pdf` and `.md`. 
 
+### `render_cdc()`
+
+```{r}
 render_cdc <- function(file_path){
   
   params_cdc <- 
@@ -71,8 +75,11 @@ render_cdc <- function(file_path){
   )
   params_cdc
 }
+```
 
+### `render_pde()`
 
+```{r}
 render_pde <- function(file_path){
   
   params_pde <- 
@@ -103,19 +110,23 @@ render_pde <- function(file_path){
 }
 ```
 
+- We set the `file_path`
 
-```{r}
-
+```{r, warings = FALSE}
 file_path  <- "data/EPFL Extension School-Personal Details-MASTER-for Daniel-02SEP2020.xlsx"
+```
 
+- Render the  _Cahier des charges_ with `render_cdc()`
+```{r, warnings = FALSE}
 render_cdc(file_path)
+```
+
+- And the _Proposition d'Engagement_ with `render_pde()`
+```{r, warnings = FALSE}
 render_pde(file_path)
 ```
 
-
-
-Then, the third step, consists in rendering the CDC and PDE files with the previous list of parameters using `rmarkdown::render()` with `params = params_list`, as in:
-
+### A word on the principle
 
 - The basic principle consists in having a YAML of the generating documents contain a `params` argument with initial values set to `NA`.
 
