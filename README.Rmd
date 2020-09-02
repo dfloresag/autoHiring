@@ -23,6 +23,11 @@ To do this, one can start by extracting the data from the properly formatted Exc
 
 We can extract the contents of the sheets `CdC` and `Proposition d'engagement`.
 
+```{r start_from_scratch, include = FALSE}
+rm(list = ls())
+```
+
+
 ```{r extract_person_cdc, message = FALSE}
 cdc <- 
   readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 2, col_names = FALSE) %>% 
