@@ -10,7 +10,8 @@ The most simple way to generate a form consists in generating [_parametrized rep
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, 
                       error =TRUE, 
-                      eval = TRUE)
+                      eval = TRUE, 
+                      message = FALSE)
 ```
 
 ```{r packs, include = FALSE}
@@ -19,34 +20,22 @@ library(readxl)
 library(janitor)
 ```
 
-To do this, one can start by extracting the data from the properly formatted Excel sheet. Here, we are only interested in the fields and their. We have the data stored in the form `form_master.xlsx`. 
-
-We can extract the contents of the sheets `CdC` and `Proposition d'engagement`.
+To do this, one can start by extracting the data from the properly formatted Excel sheet. Here, we are only interested in the fields and their. 
 
 ```{r start_from_scratch, include = FALSE}
 rm(list = ls())
 ```
 
-
-```{r extract_person_cdc, message = FALSE}
-cdc <- 
-  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 2, col_names = FALSE) %>% 
-  janitor::clean_names() %>% 
-  pivot_wider(names_from = x1, values_from = x2) %>% 
-  janitor::clean_names()
-
-pde <- 
-  readxl::read_excel(path = "data/form_master.xlsx", skip = 1, sheet = 3, col_names = FALSE) %>% 
-  janitor::clean_names() %>% 
-  pivot_wider(names_from = x1, values_from = x2) %>% 
-  janitor::clean_names()
-```
-
-The second step consists in storing the extracted values in two parameters lists.
-
 ```{r}
-params_cdc <-  as.list(cdc)
-params_pde <-  as.list(pde)
+extract_and_clean_sheet <- function(file_path, which_sheet){
+  readxl::read_excel(path = file_path, skip = 1, 
+                     sheet = which_sheet, 
+                     col_names = FALSE) %>% 
+    janitor::clean_names() %>% 
+    pivot_wider(names_from = x1, values_from = x2) %>% 
+    janitor::clean_names() %>% 
+    as.list()
+}
 ```
 
 There's some tweaking to be done with the dates as, when imported from Excel, they provide the 'days since' an origin set in  "1899-12-30". (Just to say that there has to be a more elegant way to do this.) 
@@ -60,53 +49,75 @@ set_date_origin <-  function(x) {
       x <- x %>% 
         as.numeric() %>% 
         as.Date(origin = "1899-12-30")
+      lubridate::dmy(x)
     }
   }
-  x
 }
 
-params_cdc$entree_dans_loffice<- 
-  set_date_origin(params_cdc$entree_dans_loffice)
 
-params_cdc$a_partir_du <- 
-  set_date_origin(params_cdc$a_partir_du) 
+render_cdc <- function(file_path){
   
-params_cdc$annee_de_naiss <- 
-  set_date_origin(params_cdc$annee_de_naiss)
-  
-params_pde$engagement_du <- 
-  set_date_origin(params_pde$engagement_du)
+  params_cdc <- 
+    extract_and_clean_sheet(file_path=file_path, which_sheet = 2)
    
-params_pde$engagement_au <- 
+  params_cdc$entree_dans_loffice<- set_date_origin(params_cdc$entree_dans_loffice)
+  params_cdc$a_partir_du <- set_date_origin(params_cdc$a_partir_du) 
+  params_cdc$annee_de_naiss <- set_date_origin(params_cdc$annee_de_naiss)
+  
+  rmarkdown::render(
+    input = "CDC/README.Rmd", 
+    params = params_cdc, 
+    output_format = c("pdf_document", "github_document")
+  )
+  params_cdc
+}
+
+
+render_pde <- function(file_path){
+  
+  params_pde <- 
+    extract_and_clean_sheet(file_path=file_path, which_sheet =3)
+  
+  params_pde$engagement_du <- 
+  set_date_origin(params_pde$engagement_du)
+  
+  params_pde$engagement_au <- 
   set_date_origin(params_pde$engagement_au)
-
-params_pde$date_de_naissance <- 
+  
+  params_pde$date_de_naissance <- 
   set_date_origin(params_pde$date_de_naissance)
-
-params_pde$date_du_diplome <- 
+  
+  params_pde$date_du_diplome <- 
   set_date_origin(params_pde$date_du_diplome)
-
-params_pde$date_du_doctorat <- 
-  set_date_origin(params_pde$date_du_doctorat)
+  
+  params_pde$date_du_doctorat <- 
+  set_date_origin(params_pde$date_du_doctorat) 
+  
+  
+  rmarkdown::render(
+    input = "PDE/README.Rmd", 
+    params = params_pde, 
+    output_format = c("pdf_document", "github_document")
+  )
+  params_pde
+}
 ```
+
+
+```{r}
+
+file_path  <- "data/EPFL Extension School-Personal Details-MASTER-for Daniel-02SEP2020.xlsx"
+
+render_cdc(file_path)
+render_pde(file_path)
+```
+
+
 
 Then, the third step, consists in rendering the CDC and PDE files with the previous list of parameters using `rmarkdown::render()` with `params = params_list`, as in:
 
-```{r render_docs}
-rmarkdown::render(
-  input = "CDC/README.Rmd", 
-  params = params_cdc, 
-  output_format = c("pdf_document", "github_document")
-  )
 
-rmarkdown::render(
-  input = "PDE/README.Rmd",
-  params = params_pde, 
-  output_format = c("pdf_document", "github_document")
-  )
-```
-
-- The YAML of the generating documents contain a `params` argument with initial values set to `NA`.
+- The basic principle consists in having a YAML of the generating documents contain a `params` argument with initial values set to `NA`.
 
 ```YAML
 ---
