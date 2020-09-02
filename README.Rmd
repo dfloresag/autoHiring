@@ -90,12 +90,14 @@ Then, the third step, consists in rendering the CDC and PDE files with the previ
 ```{r render_docs}
 rmarkdown::render(
   input = "CDC/README.Rmd", 
-  params = params_cdc
+  params = params_cdc, 
+  output_format = c("pdf_document", "github_document")
   )
 
 rmarkdown::render(
   input = "PDE/README.Rmd",
-  params = params_pde
+  params = params_pde, 
+  output_format = c("pdf_document", "github_document")
   )
 ```
 
