@@ -40,7 +40,7 @@ set_date_origin <-  function(x) {
       x <- x %>% 
         as.numeric() %>% 
         as.Date(origin = "1899-12-30")
-      lubridate::dmy(x)
+      x
     }
   }
 }
@@ -190,8 +190,6 @@ render_cdc(file_path)
 render_pde(file_path)
 ```
 
-    ## Warning: All formats failed to parse. No formats found.
-
     ##   |                                                                              |                                                                      |   0%  |                                                                              |......................................................................| 100%
     ##    inline R code fragments
     ## 
@@ -211,7 +209,7 @@ render_pde(file_path)
     ## [1] NA
     ## 
     ## $engagement_au
-    ## [1] NA
+    ## [1] "1900-12-31"
     ## 
     ## $support_type
     ## [1] "Technique"

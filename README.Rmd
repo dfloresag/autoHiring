@@ -48,7 +48,7 @@ set_date_origin <-  function(x) {
       x <- x %>% 
         as.numeric() %>% 
         as.Date(origin = "1899-12-30")
-      lubridate::dmy(x)
+      x
     }
   }
 }
