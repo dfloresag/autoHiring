@@ -24,68 +24,101 @@ params:
 
 ```{r, include = FALSE}
 library(htmltools)
+library(stringr)
 ```
 
 ### Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description
 
+<div class="container">
 <div class="row">
-  <div class="col-md-2"> Erstellt am <br />établi le<br />stablilito il </div>
-  <div class="col-md-4"> </div>
-  <div class="col-md-2"> durch <br /> par <br /> da   </div>
-  <div class="col-md-4"> </div>
-  <div class="col-md-3">Stellenplan Seite Nr.<br /> Etat des places pages no <br /> Piano dei posti pagina no  </div>
-  <div class="col-md-2" ></div>
+  <div class="col-sm-2"> Erstellt am <br />établi le<br />stablilito il </div>
+  <div class="col-sm-2"> </div>
+  <div class="col-sm-2"> durch <br /> par <br /> da</div>
+  <div class="col-sm-2"> </div>
+  <div class="col-sm-3">Stellenplan Seite Nr.<br /> Etat des places pages no <br /> Piano dei posti pagina no </div>
+  <div class="col-sm-1"> </div>
 </div>
 <br />
-<div class="row">
-  <div class="col-md-4"> **Name,Vorname / Nom, prénom / Cognome, nome:** <br />`r params$nom`, `r params$prenom` </div>
-  <div class="col-md-2"> **Geb.-Jahr / Année de naiss. / Date of Birth:**  <br /> `r params$annee_de_naiss` </div>
-  <div class="col-md-4"> **Erlernter Beruf / Prof.apprise / Diploma:** <br />  `r params$prof_apprise_diploma`  </div>
-  <div class="col-md-2"> **Eintritt in das heutige Amt / Entrée dans l'office / Date of entry:** <br />  `r params$entree_dans_loffice` </div>
 </div>
-<div class="row">
-  <div class="col-md-6"> **Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory** <br />`r params$secteur_unite`
- </div>
-  <div class="col-md-6"> **Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory** <br />`r params$secteur_unite`
- </div>
+
+
+<div class="container"  style="border:1px solid #cecece">
+  <div class="row">
+  <div class="col-sm-4"> **Name,Vorname / Nom, prénom / Cognome, nome:** </div>
+  <div class="col-sm-2"> **Geb.-Jahr / Année de naiss. / Date of Birth:** </div>
+  <div class="col-sm-4"> **Erlernter Beruf / Prof.apprise / Diploma:** </div>
+  <div class="col-sm-2"> **Eintritt in das heutige Amt / Entrée dans l'office / Date of entry:** </div>
+
+  <div class="w-100"></div>
+  <div class="col-sm-4">`r params$nom`, `r params$prenom` </div>
+  <div class="col-sm-2">`r params$annee_de_naiss` </div>
+  <div class="col-sm-4">`r params$prof_apprise_diploma`  </div>
+  <div class="col-sm-2">`r params$entree_dans_loffice` </div>
+  </div>
+  <br />
 </div>
-<div class="row">
-  <div class="col-md-4">**Dienstliche Stellung, Klasse gegenwärtig / Fonction, classe actuelle / Funzione, classe attuali / Function** <br />`r params$fonction` </div>
-  <div class="col-md-2"> **Kl. / cl. / cl. Classe of salary** <br /> `r params$classe` </div>
-  <div class="col-md-3"> **Vorschlag / Proposition / Proposta** <br /> </div>
-  <div class="col-md-1"> **Kl. / cl. / cl. Classe of salary** <br />  </div>
-  <div class="col-md-2"> **Termin / A partir du / A partire dal / Since** <br /> `r params$a_partir_du` </div>
+<div class="container" style="border:1px solid #cecece">
+  <div class="row">
+  <div class="col-sm-6"> **Bundesamt, office fédéral / ufficio federale**</div>
+  <div class="col-sm-6"> **Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory**</div>
+  <div class="w-100"></div>
+  <div class="col-sm-6"> `r params$office_federal`</div>
+  <div class="col-sm-6"> `r params$secteur_unite`</div>
+  </div>
+  <br />
 </div>
-<br />
-<div class="row">
-  <div class="col-md-6"> **Dienstverhältnis gegenwärtig / Rapports de service actuels / Rapporto d'impiego attuale / Contract duration** <br /> `r params$rapports_de_service_contract_duration`  </div>
-  <div class="col-md-4"> **Vorschlag / Proposition/Proposta** <br />    </div>
-  <div class="col-md-2"> **Letzte Beförderung / Dernière promotion / Ultima promozione**  <br />  </div>
+<div class="container" style="border:1px solid #cecece">
+  <div class="row">
+  <div class="col-sm-4">**Dienstliche Stellung, Klasse gegenwärtig / Fonction, classe actuelle / Funzione, classe attuali / Function**</div>
+  <div class="col-sm-2"> **Kl. / cl. / cl. Classe of salary** </div>
+  <div class="col-sm-2"> **Vorschlag / Proposition / Proposta**  </div>
+  <div class="col-sm-2"> **Kl. / cl. / cl. Classe of salary** </div>
+  <div class="col-sm-2"> **Termin / A partir du / A partire dal / Since**</div>
+  <div class="w-100"></div>
+  <div class="col-sm-4">`r params$fonction`</div>
+  <div class="col-sm-2">`r params$classe`</div>
+  <div class="col-sm-2"> </div>
+  <div class="col-sm-2"> </div>
+  <div class="col-sm-2"> `r params$a_partir_du`</div>
+  </div>
+  <br />
 </div>
-<br />
-<div class="row">
-  <div class="col-md-9"> **Tätigkeiten in der Reihenfolge ihrer Bedeutung / Activités par ordre d'importance / Job description**  </div>
-  <div class="col-md-1"> **%**   </div>
-  <div class="col-md-2"> **Art der Erledigung/ Manière de traiter les affaires / Way of work** </div>
+<div class="container" style="border:1px solid #cecece">
+  <div class="row">
+  <div class="col-sm-6"> **Dienstverhältnis gegenwärtig / Rapports de service actuels / Rapporto d'impiego attuale / Contract duration**</div>
+  <div class="col-sm-4"> **Vorschlag / Proposition / Proposta** <br />    </div>
+  <div class="col-sm-2"> **Letzte Beförderung / Dernière promotion / Ultima promozione**  <br />  </div>
+  <div class="w-100"></div>
+  <div class="col-sm-6"> `r params$rapports_de_service_contract_duration`  </div>
+  <div class="col-sm-4"> </div>
+  <div class="col-sm-2"> </div>
+  </div>
+  <br />
 </div>
-<br />
-<div class="row">
-  <div class="col-md-9"> `r params$intro_cd_c_string` </div>
-  <div class="col-md-1"> `r params$hiring_percentage` </div>
-  <div class="col-md-2"> `r params$maniere_de_traiter_les_affaires_1` </div>
+<div class="container" style="border:1px solid #cecece">
+  <div class="row">
+  <div class="col-sm-9"> **Tätigkeiten in der Reihenfolge ihrer Bedeutung / Activités par ordre d'importance / Job description**  </div>
+  <div class="col-sm-1"> **%**   </div>
+  <div class="col-sm-2"> **Art der Erledigung/ Manière de traiter les affaires / Way of work** </div>
+  <div class="w-100"></div>
+  <div class="col-sm-9"> `r params$intro_cd_c_string` </div>
+  <div class="col-sm-1">  </div>
+  <div class="col-sm-2">  </div>
+  </div>
+  <div class="row">
+  <div class="col-sm-9"> `r str_replace(params$activites_1, "(• |•)", "\n - ")`   </div>
+  <div class="col-sm-1"> `r params$percent_et_maniere_de_traiter_les_affaires_1`</div>
+  <div class="col-sm-2">  </div>
+  </div>
 </div>
-<br />
+<div class="container" style="border:1px solid #cecece">
 <div class="row">
-  <div class="col-md-9"> `r params$activites_1`   </div>
-  <div class="col-md-1"></div>  
-  <div class="col-md-2"></div>
+  <div class="col-sm-12"> **Direkte/r Vorgesetzte/r / Supérieur/e directe / Superiore diretto/a:**  `r params$superieur_e_direct_e`  </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-2"></div>
 </div>
-<br />
-<div class="row">
-  <div class="col-md-9"> **Direkte/r Vorgesetzte/r / Supérieur/e directe / Superiore diretto/a**  `r params$superieur_e_direct_e`  </div>
-  <div class="col-md-1"></div>
-  <div class="col-md-2"></div>
 </div>
+
 
 
 

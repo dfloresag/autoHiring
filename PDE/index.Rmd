@@ -40,54 +40,54 @@ params:
 ---
 
 ### PROPOSITION D'ENGAGEMENT - personnel payé au mois
-
 (à transmettre aux Ressources Humaines, qui définiront la fonction et le salaire)
 
+<div class="container" style="border:1px solid #cecece">
+  <div class="row">
+  <div class="col-sm-9"> **Nom et prénom:** `r params$nom` `r params$prenom`</div>
+  <div class="col-sm-3"> **N° AVS:**  `r params$n_avs` </div>
+  </div>
+</div>
+<div class="container" style="border:1px solid #cecece">
+  <div class="row">
+  <div class="col-sm-12"> **Adresse complète:** `r params$address_line_1` `r params$address_line_2` </div>
+  </div>
+</div>
 <div class="row">
-  <div class="col-md-9"> **Nom et prénom:** `r params$nom` `r params$prenom`</div>
-  <div class="col-md-3"> **N° AVS:**  `r params$n_avs` </div>
+  <div class="col-sm-4">**Date de naissance:** `r params$date_de_naissance`</div>
+  <div class="col-sm-4">**Etat civil:**  `r params$etat_civil`</div>
+  <div class="col-sm-4">**Nombre d'enfants:** `r params$nombre_denfants`</div>
 </div>
 <br />
 <div class="row">
-  <div class="col-md-12"> **Adresse complète:** `r params$address_line_1` `r params$address_line_2` </div>
+  <div class="col-sm-4"> **Nationalité** `r params$nationalite`   </div>
+  <div class="col-sm-4"> **Profession:**  `r params$profession` </div>
+  <div class="col-sm-4">**Date du diplôme:**  `r params$date_du_diplome`</div>
+</div>
+<div class="row">
+  <div class="col-sm-4">(joindre la copie de la pièce d’identité)</div>
+  <div class="col-sm-4">**Doctorat**: `r params$doctorat`</div>
+  <div class="col-sm-4">**Date du Doctorat:**  `r params$date_du_doctorat`|</div>
 </div>
 <br />
 <div class="row">
-  <div class="col-md-4">**Date de naissance:** `r params$date_de_naissance`</div>
-  <div class="col-md-4">**Etat civil:**  `r params$etat_civil`</div>
-  <div class="col-md-4">**Nombre d'enfants:** `r params$nombre_denfants`</div>
+  <div class="col-sm-12">**Taux d'occupation:**`r params$taux_doccupation` </div>
 </div>
 <br />
 <div class="row">
-  <div class="col-md-4"> **Nationalité** `r params$nationalite`   </div>
-  <div class="col-md-4"> **Profession:**  `r params$profession` </div>
-  <div class="col-md-4">**Date du diplôme:**  `r params$date_du_diplome`</div>
+  <div class="col-sm-12">**Lieu de travail:** `r params$lieu_de_travail` </div>
 </div>
 <br />
 <div class="row">
-  <div class="col-md-4">(joindre la copie de la pièce d’identité)</div>
-  <div class="col-md-4">**Doctorat**: `r params$doctorat`</div>
-  <div class="col-md-4">**Date du Doctorat:**  `r params$date_du_doctorat`|</div>
+  <div class="col-sm-12">**Étranger.e.s: Permis de travail** (joindre une copie):  `r params$permis_de_travail` </div>
 </div>
 <br />
 <div class="row">
-  <div class="col-md-12">**Taux d'occupation:**`r params$taux_doccupation` </div>
+  <div class="col-sm-12">**ATTENTION:** Les collaborateurs.rices, ainsi que leur famille, provenant d'un pays soumis à visa sont prié.e.s de déposer une demande d'entrée en Suisse auprès de l'ambassade ou du consulat de Suisse le plus proche de leur domicile.</div>
 </div>
 <br />
 <div class="row">
-  <div class="col-md-12">**Lieu de travail:** `r params$lieu_de_travail` </div>
-</div>
-<br />
-<div class="row">
-  <div class="col-md-12">**Étranger.e.s: Permis de travail** (joindre une copie):  `r params$permis_de_travail` </div>
-</div>
-<br />
-<div class="row">
-  <div class="col-md-12">**ATTENTION:** Les collaborateurs.rices, ainsi que leur famille, provenant d'un pays soumis à visa sont prié.e.s de déposer une demande d'entrée en Suisse auprès de l'ambassade ou du consulat de Suisse le plus proche de leur domicile.</div>
-</div>
-<br />
-<div class="row">
-  <div class="col-md-12">**Si conjoint.e et enfant.s l'accompagne.nt:** merci de joindre copie des passeports, acte de mariage, acte(s) de naissance (indispensable pour Etats tiers).</div>
+  <div class="col-sm-12">**Si conjoint.e et enfant.s l'accompagne.nt:** merci de joindre copie des passeports, acte de mariage, acte(s) de naissance (indispensable pour Etats tiers).</div>
 </div>
 
 
