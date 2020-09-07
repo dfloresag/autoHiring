@@ -118,17 +118,17 @@ render_pde <- function(file_path){
 
 - We set the `file_path`
 
-```{r, warings = FALSE}
+```{r, warnings = FALSE}
 file_path  <- "data/EPFL Extension School-Personal Details-MASTER-for Daniel-02SEP2020.xlsx"
 ```
 
 - Render the  _Cahier des charges_ with `render_cdc()`
-```{r, warnings = FALSE}
+```{r, warnings = FALSE, message = FALSE}
 render_cdc(file_path)
 ```
 
 - And the _Proposition d'Engagement_ with `render_pde()`
-```{r, warnings = FALSE}
+```{r, warnings = FALSE, message = FALSE}
 render_pde(file_path)
 ```
 

@@ -175,7 +175,7 @@ render_pde(file_path)
     ##    inline R code fragments
     ## 
     ## 
-    ## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS index.utf8.md --to html4 --from markdown-hard_line_breaks+superscript+tex_math_dollars+raw_html+markdown_in_html_blocks-implicit_figures --output index.html -H /var/folders/0r/lz5zqtk16jzfphyl_nphc2hr0000gp/T//Rtmp3Q82QM/knitr_bootstrap_full.html
+    ## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS index.utf8.md --to html4 --from markdown-hard_line_breaks+superscript+tex_math_dollars+raw_html+markdown_in_html_blocks-implicit_figures --output index.html -H /var/folders/0r/lz5zqtk16jzfphyl_nphc2hr0000gp/T//RtmprDAQcG/knitr_bootstrap_full.html
 
 ### A word on the principle
 
