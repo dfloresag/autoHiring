@@ -110,7 +110,7 @@ render_pde <- function(file_path){
   )
   rmarkdown::render(
     input = "PDE/index.Rmd", 
-    params = params_cdc
+    params = params_pde
     )
   # params_pde
 }
