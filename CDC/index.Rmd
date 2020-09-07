@@ -1,0 +1,97 @@
+---
+title: "Cahier des charges"
+output:
+  knitrBootstrap::bootstrap_document
+params:
+  nom : NA
+  prenom : NA
+  annee_de_naiss : NA
+  prof_apprise_diploma : NA
+  entree_dans_loffice : NA
+  office_federal : NA
+  secteur_unite : NA
+  fonction : NA
+  classe : NA
+  a_partir_du : NA
+  rapports_de_service_contract_duration : NA
+  intro_cd_c_string : NA
+  activites_1 : NA
+  percent_et_maniere_de_traiter_les_affaires_1 : NA
+  activites_2 : NA
+  percent_et_maniere_de_traiter_les_affaires_2 : NA
+  superieur_e_direct_e : NA                        
+---
+
+```{r, include = FALSE}
+library(htmltools)
+```
+
+### Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description
+
+<div class="row">
+  <div class="col-md-2"> Erstellt am <br />établi le<br />stablilito il </div>
+  <div class="col-md-4"> </div>
+  <div class="col-md-2"> durch <br /> par <br /> da   </div>
+  <div class="col-md-4"> </div>
+  <div class="col-md-3">Stellenplan Seite Nr.<br /> Etat des places pages no <br /> Piano dei posti pagina no  </div>
+  <div class="col-md-2" ></div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-4"> **Name,Vorname / Nom, prénom / Cognome, nome:** <br />`r params$nom`, `r params$prenom` </div>
+  <div class="col-md-2"> **Geb.-Jahr / Année de naiss. / Date of Birth:**  <br /> `r params$annee_de_naiss` </div>
+  <div class="col-md-4"> **Erlernter Beruf / Prof.apprise / Diploma:** <br />  `r params$prof_apprise_diploma`  </div>
+  <div class="col-md-2"> **Eintritt in das heutige Amt / Entrée dans l'office / Date of entry:** <br />  `r params$entree_dans_loffice` </div>
+</div>
+<div class="row">
+  <div class="col-md-6"> **Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory** <br />`r params$secteur_unite`
+ </div>
+  <div class="col-md-6"> **Bereich, Betrieb / Secteur,unité d' organisation/ Faculty-laboratory** <br />`r params$secteur_unite`
+ </div>
+</div>
+<div class="row">
+  <div class="col-md-4">**Dienstliche Stellung, Klasse gegenwärtig / Fonction, classe actuelle / Funzione, classe attuali / Function** <br />`r params$fonction` </div>
+  <div class="col-md-2"> **Kl. / cl. / cl. Classe of salary** <br /> `r params$classe` </div>
+  <div class="col-md-3"> **Vorschlag / Proposition / Proposta** <br /> </div>
+  <div class="col-md-1"> **Kl. / cl. / cl. Classe of salary** <br />  </div>
+  <div class="col-md-2"> **Termin / A partir du / A partire dal / Since** <br /> `r params$a_partir_du` </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-6"> **Dienstverhältnis gegenwärtig / Rapports de service actuels / Rapporto d'impiego attuale / Contract duration** <br /> `r params$rapports_de_service_contract_duration`  </div>
+  <div class="col-md-4"> **Vorschlag / Proposition/Proposta** <br />    </div>
+  <div class="col-md-2"> **Letzte Beförderung / Dernière promotion / Ultima promozione**  <br />  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-9"> **Tätigkeiten in der Reihenfolge ihrer Bedeutung / Activités par ordre d'importance / Job description**  </div>
+  <div class="col-md-1"> **%**   </div>
+  <div class="col-md-2"> **Art der Erledigung/ Manière de traiter les affaires / Way of work** </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-9"> `r params$intro_cd_c_string` </div>
+  <div class="col-md-1"> `r params$hiring_percentage` </div>
+  <div class="col-md-2"> `r params$maniere_de_traiter_les_affaires_1` </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-9"> `r params$activites_1`   </div>
+  <div class="col-md-1"></div>  
+  <div class="col-md-2"></div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-9"> **Direkte/r Vorgesetzte/r / Supérieur/e directe / Superiore diretto/a**  `r params$superieur_e_direct_e`  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+</div>
+
+
+
+ 
+
+
+
+
+ 

@@ -3,29 +3,29 @@ Cahier des charges
 
 ## Pflichtenheft / Cahier des charges / Elenco degli obblighi / Job description
 
-|                                                                                                                 |                              |
-| :-------------------------------------------------------------------------------------------------------------- | :--------------------------: |
-| **Name,Vorname / Nom, prénom / Cognome, nome:**                                                                 |       SMITH, Francesca       |
-| **Geb.-Jahr / Année de naiss./ Date of Birth:**                                                                 |              NA              |
-| **Erlernter Beruf/Prof.apprise/Diploma:**                                                                       |              0               |
-| **Eintritt in das heutige Amt / Entrée dans l’office / Date of entry:**                                         |              NA              |
-| **Bundesamt / office fédéral / ufficio federale**                                                               |             EPFL             |
-| **Bereich, Betrieb / Secteur,unité d’ organisation/ Faculty-laboratory**                                        |           VPE-EXTS           |
-| **Dienstliche Stellung, Klasse gegenwärtig / Fonction, classe actuelle / Funzione, classe attuali / Function**  |              0               |
-| **Kl. / cl. / cl. Classe of salary**                                                                            |              NA              |
-| **Vorschlag/Proposition/Proposta**                                                                              |                              |
-| **Kl. / cl. / cl. Classe of salary**                                                                            |                              |
-| **Termin / A partir du / A partire dal / Since**                                                                |              NA              |
-| **Dienstverhältnis gegenwärtig / Rapports de service actuels / Rapporto d’impiego attuale / Contract duration** | Fixed-term contract (1 year) |
-| **Vorschlag / Proposition/Proposta**                                                                            |                              |
-| **Letzte Beförderung / Dernière promotion / Ultima promozione**                                                 |                              |
-| **%**                                                                                                           |                              |
-| **Art der Erledigung / Manière de traiter les affaires / Way of work**                                          |                              |
-| **Direkte/r Vorgesetzte/r / Supérieur/e directe / Superiore diretto/a**                                         |         Nico Schuele         |
+|                                                                                                                 |                                 |
+| :-------------------------------------------------------------------------------------------------------------- | :-----------------------------: |
+| **Name,Vorname / Nom, prénom / Cognome, nome:**                                                                 |          MOSER, Laure           |
+| **Geb.-Jahr / Année de naiss./ Date of Birth:**                                                                 |           06 Nov 1984           |
+| **Erlernter Beruf/Prof.apprise/Diploma:**                                                                       |     Business Administration     |
+| **Eintritt in das heutige Amt / Entrée dans l’office / Date of entry:**                                         |           01 Oct 2020           |
+| **Bundesamt / office fédéral / ufficio federale**                                                               |              EPFL               |
+| **Bereich, Betrieb / Secteur,unité d’ organisation/ Faculty-laboratory**                                        |            VPE-EXTS             |
+| **Dienstliche Stellung, Klasse gegenwärtig / Fonction, classe actuelle / Funzione, classe attuali / Function**  | Course Developer and Instructor |
+| **Kl. / cl. / cl. Classe of salary**                                                                            |               NA                |
+| **Vorschlag/Proposition/Proposta**                                                                              |                                 |
+| **Kl. / cl. / cl. Classe of salary**                                                                            |                                 |
+| **Termin / A partir du / A partire dal / Since**                                                                |           01 Oct 2020           |
+| **Dienstverhältnis gegenwärtig / Rapports de service actuels / Rapporto d’impiego attuale / Contract duration** |  Fixed-term contract (1 year)   |
+| **Vorschlag / Proposition/Proposta**                                                                            |                                 |
+| **Letzte Beförderung / Dernière promotion / Ultima promozione**                                                 |                                 |
+| **%**                                                                                                           |                                 |
+| **Art der Erledigung / Manière de traiter les affaires / Way of work**                                          |                                 |
+| **Direkte/r Vorgesetzte/r / Supérieur/e directe / Superiore diretto/a**                                         |          Nico Schuele           |
 
 ### Activités par ordre d’importance
 
-Francesca SMITH is hired as a Course Developer and Instructor for the
+Laure MOSER is hired as a Course Developer and Instructor for the
 Web/Code team of the EPFL Extension School, under the supervision of
 Nico Schuele. S/he will focus on the following key tasks:
 
